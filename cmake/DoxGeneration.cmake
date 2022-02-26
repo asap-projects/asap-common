@@ -75,7 +75,7 @@ if(DOXYGEN_FOUND)
       COMMENT "Generating doxygen documentation for \"${MODULE_NAME}\""
       VERBATIM)
     set_target_properties(${MODULE_NAME}_dox PROPERTIES EXCLUDE_FROM_ALL TRUE)
-    add_dependencies(dox ${MODULE_NAME}_dox)
+    add_dependencies(${META_PROJECT_ID}_dox ${MODULE_NAME}_dox)
   endfunction()
 
   function(asap_with_doxygen)
@@ -137,17 +137,17 @@ if(DOXYGEN_FOUND)
   # cmake-format: on
 
   # The master doxygen target
-  add_custom_target(dox)
+  add_custom_target(${META_PROJECT_ID}_dox)
   # We don't want it to be rebuilt everytime we build all. Need to explicitly
   # request it to be built.
-  set_target_properties(dox PROPERTIES EXCLUDE_FROM_ALL TRUE)
+  set_target_properties(${META_PROJECT_ID}_dox PROPERTIES EXCLUDE_FROM_ALL TRUE)
   # Custom command to collect warnings and print them
   add_custom_command(
-    TARGET dox
+    TARGET ${META_PROJECT_ID}_dox
     POST_BUILD
     COMMAND ${CMAKE_COMMAND} -P "${COLLECT_WARNINGS_SCRIPT}"
     WORKING_DIRECTORY "${DOXYGEN_BUILD_DIR}"
-    COMMENT "Running post-build command for dox")
+    COMMENT "Running post-build command for ${META_PROJECT_ID}_dox")
 
 else()
   message(STATUS "WARNING: Doxygen package is not available on this system!")
