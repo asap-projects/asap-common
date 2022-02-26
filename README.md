@@ -1,41 +1,35 @@
-# Starter project for C++ with cmake
+# Common submodule for the asap project
 
 ![Start Now!!](doc/_static/logo.png "ASAP Logo")
 
-[![Linux Build (Ubuntu latest)](https://github.com/abdes/asap/actions/workflows/linux-build.yml/badge.svg?branch=master)](https://github.com/abdes/asap/actions/workflows/linux-build.yml)
-[![Windows Build (latest)](https://github.com/abdes/asap/actions/workflows/windows-build.yml/badge.svg?branch=master)](https://github.com/abdes/asap/actions/workflows/windows-build.yml)
+[![Linux Build (Ubuntu latest)](https://github.com/asap-projects/asap-common/actions/workflows/linux-build.yml/badge.svg?branch=master)](https://github.com/asap-projects/asap-common/actions/workflows/linux-build.yml)
+[![Windows Build (latest)](https://github.com/asap-projects/asap-common/actions/workflows/windows-build.yml/badge.svg?branch=master)](https://github.com/asap-projects/asap-common/actions/workflows/windows-build.yml)
 
-## [Project Documentation](https://abdes.github.io/asap/)
+## [Project Documentation](https://asap-projects.github.io/asap-common/)
 
 ## Overview
 
-- `CMake` as the build system with or without presets
-- cross-platform portability on Linux, OS X and Windows
-- multiple compilers: clang, g++ and MSVC
-- modular structure with each module self-contained in a subdirectory within the project
-- `CMake` build helpers to facilitate declaration of library, exe, test modules, for the
-  end-to-end lifecycle including doc generation, test, packaging etc...
-- common facilities (common module) for platform specifics, assertions support, logging
-- unit testing with Google Test
-- code coverage with clang or g++
-- zero-touch valgrind, clang-tidy, clang-format, google sanitizers, etc.
-- development can be done locally or in a dev container with vscode.
+This a header only library offering the most basic toolkit for multi-platform
+and multi-compiler development for the asap projects. The module includes macros
+and compiler definitions for platform and compiler feature detection as well as
+some other preprocessor helpers. For a full documentation of what is available
+refer to the [project docs](https://asap-projects.github.io/asap-common/).
 
 ## Getting the code
 
 ```bash
-git clone --recurse-submodules -j4 https://github.com/abdes/asap.git
+git clone --recurse-submodules -j4 https://github.com/asap-projects/asap-common.git
 ```
 
 NOTES:
 
-- -j4 requests git to parallelize cloning of repos. Needs a relatively recent version of git. If
-  that is not available, simply do not use this option.
+- -j4 requests git to parallelize cloning of repos. Needs a relatively recent
+  version of git. If that is not available, simply do not use this option.
 
 ## Requirements
 
-Make sure you have a C++ compiler with C++-17 capabilities at least. Gnu, Clang and MSVC all can do
-that with a recent version.
+Make sure you have a C++ compiler with C++-17 capabilities at least. Gnu, Clang
+and MSVC all can do that with a recent version.
 
 ## Enabling husky/commitlint/standard-version
 
@@ -53,9 +47,11 @@ npm install -g standard-version
 mkdir _build && cd _build && cmake .. && cmake --build .
 ```
 
-or just use one of the predefined `CMake` presets. Detailed instructions are in the project
-documentation, and many useful commands are listed [here](https://abdes.github.io/asap/master/html/01-getting-started/useful-commands.html).
+or just use one of the predefined `CMake` presets. Detailed instructions and
+many useful commands are listed
+[here](https://abdes.github.io/asap/master/html/01-getting-started/useful-commands.html).
 
+### CMake configurable build options
 
 ```cmake
 # Project options
