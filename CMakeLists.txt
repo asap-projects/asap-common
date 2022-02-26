@@ -317,6 +317,7 @@ if(SPHINX_FOUND)
     copy_doc_index
     # Add more submodule documentation targets after this, using variables in
     # the target names consistently with the module's CMakeLists.txt.
+    asap_common_sphinx
   )
 
 endif()
@@ -325,7 +326,7 @@ endif()
 # Project modules
 # ==============================================================================
 
-# Add project modules here
+add_subdirectory(common)
 
 # ==============================================================================
 # Code analyzers: clang-tidy, cppcheck, valgrind, sanitizers, etc...
