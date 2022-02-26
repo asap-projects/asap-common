@@ -33,9 +33,9 @@ endif()
 # Meta information about the project
 # cmake-format: off
 set(META_PROJECT_NAME        "asap-common")
-set(META_PROJECT_DESCRIPTION "Instantly start with a fully loaded CMake project")
+set(META_PROJECT_DESCRIPTION "ASAP Common module.")
 set(META_AUTHOR_ORGANIZATION "The Authors")
-set(META_GITHUB_REPO         "https://github.com/asap-projects/common")
+set(META_GITHUB_REPO         "https://github.com/asap-projects/asap-common")
 set(META_AUTHOR_DOMAIN       "https://github.com/asap-projects")
 set(META_AUTHOR_MAINTAINER   "Abdessattar Sassi")
 set(META_VERSION_MAJOR       "1")
