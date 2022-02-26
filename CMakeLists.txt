@@ -48,7 +48,7 @@ set(META_CMAKE_INIT_SHA      "${GIT_REV}")
 # cmake-format: on
 
 string(MAKE_C_IDENTIFIER ${META_PROJECT_NAME} META_PROJECT_ID)
-string(TOUPPER ${META_PROJECT_ID} META_PROJECT_ID)
+string(TOLOWER ${META_PROJECT_ID} META_PROJECT_ID)
 
 # Determine if this is built as a subproject  or if it is the master project.
 if(NOT DEFINED ${META_PROJECT_ID}_MASTER_PROJECT)
@@ -225,6 +225,27 @@ endif()
 # Third party modules
 # ------------------------------------------------------------------------------
 
+include(FetchContent)
+# We make sure that we have 'third_party' in the name so that the targets get
+# excluded from the generated target lists for the various tools.
+set(FETCHCONTENT_BASE_DIR ${CMAKE_BINARY_DIR}/third_party_deps)
+FetchContent_Declare(
+  googletest
+  GIT_REPOSITORY https://github.com/google/googletest.git
+  GIT_TAG # GoogleTest now follows the Abseil Live at Head philosophy. We
+          # recommend using the latest commit in the main branch in your
+          # projects.
+          origin/main)
+# For Windows: Prevent overriding the parent project's compiler/linker settings
+set(gtest_force_shared_crt
+    ON
+    CACHE BOOL "" FORCE)
+set(INSTALL_GTEST
+    OFF
+    CACHE BOOL "" FORCE)
+FetchContent_MakeAvailable(googletest)
+include(GoogleTest)
+
 add_subdirectory(third_party)
 
 # ------------------------------------------------------------------------------
@@ -265,27 +286,6 @@ enable_testing()
 asap_add_code_coverage_all_targets(EXCLUDE */test/* *googlemock* *googletest*
                                    /usr/*)
 
-include(FetchContent)
-# We make sure that we have 'third_party' in the name so that the targets get
-# excluded from the generated target lists for the various tools.
-set(FETCHCONTENT_BASE_DIR ${CMAKE_BINARY_DIR}/third_party_deps)
-FetchContent_Declare(
-  googletest
-  GIT_REPOSITORY https://github.com/google/googletest.git
-  GIT_TAG # GoogleTest now follows the Abseil Live at Head philosophy. We
-          # recommend using the latest commit in the main branch in your
-          # projects.
-          origin/main)
-# For Windows: Prevent overriding the parent project's compiler/linker settings
-set(gtest_force_shared_crt
-    ON
-    CACHE BOOL "" FORCE)
-set(INSTALL_GTEST
-    OFF
-    CACHE BOOL "" FORCE)
-FetchContent_MakeAvailable(googletest)
-include(GoogleTest)
-
 # ==============================================================================
 # Documentation - doxygen, sphinx/breathe/exhale
 # ==============================================================================
@@ -304,21 +304,23 @@ if(SPHINX_FOUND)
 
   # Add a target for copying the index.html from the doc dir to the sphinx build
   # dir. A dependency on this target will be added to the master sphinx target.
-  add_custom_command(
-    OUTPUT ${CMAKE_CURRENT_BINARY_DIR}/sphinx/index.html
-    COMMAND ${CMAKE_COMMAND} -E copy ${CMAKE_CURRENT_SOURCE_DIR}/doc/index.html
-            ${CMAKE_CURRENT_BINARY_DIR}/sphinx/index.html
-    DEPENDS ${CMAKE_CURRENT_SOURCE_DIR}/doc/index.html)
-  add_custom_target(${META_PROJECT_ID}_copy_doc_index ALL
-                    DEPENDS ${CMAKE_CURRENT_BINARY_DIR}/sphinx/index.html)
+  # !! Only if this is the master project
+  if(${META_PROJECT_ID}_MASTER_PROJECT)
+    add_custom_command(
+      OUTPUT ${CMAKE_CURRENT_BINARY_DIR}/sphinx/index.html
+      COMMAND
+        ${CMAKE_COMMAND} -E copy ${CMAKE_CURRENT_SOURCE_DIR}/doc/index.html
+        ${CMAKE_CURRENT_BINARY_DIR}/sphinx/index.html
+      DEPENDS ${CMAKE_CURRENT_SOURCE_DIR}/doc/index.html)
+    add_custom_target(copy_doc_index ALL
+                      DEPENDS ${CMAKE_CURRENT_BINARY_DIR}/sphinx/index.html)
 
-  add_dependencies(
-    ${META_PROJECT_ID}_master_sphinx
-    ${META_PROJECT_ID}_copy_doc_index
-    # Add more submodule documentation targets after this, using variables in
-    # the target names consistently with the module's CMakeLists.txt.
-    asap_common_sphinx
-  )
+    add_dependencies(
+      ${META_PROJECT_ID}_master_sphinx copy_doc_index
+      # Add more submodule documentation targets after this, using variables in
+      # the target names consistently with the module's CMakeLists.txt.
+    )
+  endif()
 
 endif()
 
