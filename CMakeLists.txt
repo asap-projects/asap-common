@@ -96,9 +96,9 @@ project(
   LANGUAGES C CXX)
 
 # Set output directories
-set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/bin)
-set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/bin)
-set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/lib)
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
+set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
+set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
 
 # Create version file
 file(WRITE "${PROJECT_BINARY_DIR}/VERSION" "${META_NAME_VERSION}")
@@ -300,7 +300,7 @@ include(SphinxGeneration)
 
 # Setup sphinx doc master target and add other submodules as dependencies
 if(SPHINX_FOUND)
-  asap_with_sphinx(master)
+  asap_with_sphinx(${META_PROJECT_ID}_master)
 
   # Add a target for copying the index.html from the doc dir to the sphinx build
   # dir. A dependency on this target will be added to the master sphinx target.
@@ -309,12 +309,12 @@ if(SPHINX_FOUND)
     COMMAND ${CMAKE_COMMAND} -E copy ${CMAKE_CURRENT_SOURCE_DIR}/doc/index.html
             ${CMAKE_CURRENT_BINARY_DIR}/sphinx/index.html
     DEPENDS ${CMAKE_CURRENT_SOURCE_DIR}/doc/index.html)
-  add_custom_target(copy_doc_index ALL
+  add_custom_target(${META_PROJECT_ID}_copy_doc_index ALL
                     DEPENDS ${CMAKE_CURRENT_BINARY_DIR}/sphinx/index.html)
 
   add_dependencies(
-    master_sphinx
-    copy_doc_index
+    ${META_PROJECT_ID}_master_sphinx
+    ${META_PROJECT_ID}_copy_doc_index
     # Add more submodule documentation targets after this, using variables in
     # the target names consistently with the module's CMakeLists.txt.
     asap_common_sphinx
