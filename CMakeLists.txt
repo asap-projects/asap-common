@@ -50,8 +50,8 @@ asap_add_library(${MODULE_TARGET_NAME} INTERFACE WARNING)
 target_include_directories(
   ${MODULE_TARGET_NAME}
   INTERFACE $<INSTALL_INTERFACE:include>
-         $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
-         $<BUILD_INTERFACE:${CMAKE_CURRENT_BINARY_DIR}/include>)
+            $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+            $<BUILD_INTERFACE:${CMAKE_CURRENT_BINARY_DIR}/include>)
 
 target_compile_features(${MODULE_TARGET_NAME} INTERFACE cxx_std_17)
 
@@ -95,7 +95,7 @@ asap_with_sphinx(${MODULE_TARGET_NAME})
 # Deployment instructions
 # ==============================================================================
 
-if(ASAP_COMMON_INSTALL)
+if(${META_PROJECT_ID}_INSTALL)
   set(TARGETS_EXPORT_NAME "${MODULE_TARGET_NAME}Targets")
   set(runtime "${MODULE_TARGET_NAME}_runtime")
   set(dev "${MODULE_TARGET_NAME}_dev")
