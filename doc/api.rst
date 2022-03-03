@@ -16,9 +16,7 @@ API reference
 
    Platform detection <api/platform>
    Compiler detection <api/compilers>
-   Overload pattern <api/overload>
-   Mixin library <api/mixin>
-   Mask/Flags manipulation <api/flags>
+   Project meta properties <api/meta>
 
 This module offers the following APIs:
 
@@ -32,15 +30,7 @@ This module offers the following APIs:
   *macros and compiler definitions to help identify and use the compiler being
   used to compile the code.*
 
-:doc:`Overload pattern <api/overload>`
-======================================
-  *the famous overload pattern which allows to use separate lambdas
-  "in=place" for visiting a variant.*
-
-:doc:`Mixin library <api/mixin>`
-================================
-  *a lightweight library to simplify the use of mixins in C++ classes.*
-
-:doc:`Mask/Flags manipulation <api/flags>`
-==========================================
-  *utility functions to help in using and manipulating bit flags and masks.*
+:doc:`Project meta properties<api/meta>`
+========================================
+  *project meta information, sych as name, version, description, etc. as defined
+  in the project top-level `CMakeLists.txt`.*
