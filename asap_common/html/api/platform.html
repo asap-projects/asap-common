@@ -103,18 +103,8 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="overload.html">
-     Overload pattern
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="mixin.html">
-     Mixin library
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="flags.html">
-     Mask/Flags manipulation
+    <a class="reference internal" href="meta.html">
+     Project meta properties
     </a>
    </li>
   </ul>
@@ -217,11 +207,6 @@
    Operating System detection
   </a>
  </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#feature-symbols">
-   Feature symbols
-  </a>
- </li>
 </ul>
 
             </nav>
@@ -247,11 +232,6 @@
    Operating System detection
   </a>
  </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#feature-symbols">
-   Feature symbols
-  </a>
- </li>
 </ul>
 
                         </nav>
@@ -265,15 +245,7 @@
 <h1>Platform and environment preprocessor symbols<a class="headerlink" href="#platform-and-environment-preprocessor-symbols" title="Permalink to this headline">¶</a></h1>
 <p>The <em>common</em> module provides a number of preprocessor symbols that can be used
 to detect the current platform and features available on it. These symbols are
-present in the following files:</p>
-<blockquote>
-<div><dl class="simple">
-<dt><strong>platform.h</strong></dt><dd><p><em>operating system detection symbols</em></p>
-</dd>
-<dt><strong>config.h</strong></dt><dd><p><em>features used in the common module and which can be enabled/disabled</em></p>
-</dd>
-</dl>
-</div></blockquote>
+present in the <cite>common/platform.h</cite> header file.</p>
 <div class="section" id="operating-system-detection">
 <h2>Operating System detection<a class="headerlink" href="#operating-system-detection" title="Permalink to this headline">¶</a></h2>
 <p>The following symbols are defined/undefined based on the operating system on
@@ -322,45 +294,6 @@ BSDI)</p></li>
 <span class="cp">#endif</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="feature-symbols">
-<span id="id1"></span><h2>Feature symbols<a class="headerlink" href="#feature-symbols" title="Permalink to this headline">¶</a></h2>
-<p>Special features implemented in this module can be enabled/disabled using
-preprocessor symbols as described in the table below:</p>
-<table class="table">
-<colgroup>
-<col style="width: 17%" />
-<col style="width: 83%" />
-</colgroup>
-<thead>
-<tr class="row-odd"><th class="head"><p>Symbol</p></th>
-<th class="head"><p>Description</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>ASAP_USE_ASSERTS</p></td>
-<td><p>If defined with value 1, it indicates that assertion
-macros should be defined to fail when assertions are
-evaluation to false. Otherwise, the macros will be
-defined to no-op.</p>
-<p>Default is 1.</p>
-</td>
-</tr>
-<tr class="row-odd"><td><p>ASAP_USE_SYSTEM_ASSERTS</p></td>
-<td><p>If defined with value 1, system assert() will be
-used instead of the custom macros.</p>
-<p>Default is 1.</p>
-</td>
-</tr>
-<tr class="row-even"><td><p>ASAP_USE_EXECINFO</p></td>
-<td><p>If defined with value 1, the platform has execinfo.h
-and the assertion macros will be able to display
-rich call stacks on failures (see <a class="reference external" href="https://www.gnu.org/software/libc/manual/html_node/Backtraces.html">GNU libc backtrace</a>).</p>
-<p>Default is platform specific.</p>
-</td>
-</tr>
-</tbody>
-</table>
 </div>
 </div>
 

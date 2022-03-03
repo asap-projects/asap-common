@@ -12,12 +12,7 @@ Platform and environment preprocessor symbols
 
 The *common* module provides a number of preprocessor symbols that can be used
 to detect the current platform and features available on it. These symbols are
-present in the following files:
-
-   **platform.h**
-      *operating system detection symbols*
-   **config.h**
-      *features used in the common module and which can be enabled/disabled*
+present in the `common/platform.h` header file.
 
 Operating System detection
 ==========================
@@ -63,35 +58,3 @@ An example fo how to use these symbols is as following:
   #else
   // do generic things for the rest of the platforms
   #endif
-
-.. _feature-symbols:
-
-Feature symbols
-===============
-
-Special features implemented in this module can be enabled/disabled using
-preprocessor symbols as described in the table below:
-
-========================== ====================================================
-Symbol                     Description
-========================== ====================================================
-ASAP_USE_ASSERTS           If defined with value 1, it indicates that assertion
-                           macros should be defined to fail when assertions are
-                           evaluation to false. Otherwise, the macros will be
-                           defined to no-op.
-
-                           Default is 1.
-
-ASAP_USE_SYSTEM_ASSERTS    If defined with value 1, system assert() will be
-                           used instead of the custom macros.
-
-                           Default is 1.
-
-ASAP_USE_EXECINFO          If defined with value 1, the platform has execinfo.h
-                           and the assertion macros will be able to display
-                           rich call stacks on failures (see `GNU libc backtrace <https://www.gnu.org/software/libc/manual/html_node/Backtraces.html>`_).
-
-                           Default is platform specific.
-
-========================== ====================================================
-
