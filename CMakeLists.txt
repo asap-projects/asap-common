@@ -98,9 +98,6 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
 
-# Create version file
-file(WRITE "${PROJECT_BINARY_DIR}/VERSION" "${META_NAME_VERSION}")
-
 # ------------------------------------------------------------------------------
 # Additional CMake modules
 # ------------------------------------------------------------------------------
@@ -195,14 +192,6 @@ if(NOT SYSTEM_DIR_INSTALL)
     set(CMAKE_INSTALL_RPATH "$ORIGIN/${ASAP_INSTALL_LIB}")
   endif()
 endif()
-
-# ------------------------------------------------------------------------------
-# Top level code generation
-# ------------------------------------------------------------------------------
-
-# Generate version-header
-configure_file(templates/version.h.in
-               ${CMAKE_CURRENT_BINARY_DIR}/include/asap/asap-version.h)
 
 # Generate a clangd configuration file that points to the compilation database
 # in the cmake build directory. We need to do this as the build directory is
