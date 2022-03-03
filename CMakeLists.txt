@@ -160,6 +160,7 @@ if(ASAP_BUILD_TESTS)
                                      /usr/*)
   include(Valgrind)
   include(GoogleTest)
+  include(CTest)
 endif()
 
 # ------------------------------------------------------------------------------
