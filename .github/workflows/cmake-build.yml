@@ -48,9 +48,9 @@ jobs:
               generators: "Ninja",
             }
           - {
-              name: "Ubuntu_GCC_9",
+              name: "Ubuntu_GCC_11",
               os: ubuntu-latest,
-              artifact: "ubuntu_gcc9.7z",
+              artifact: "ubuntu_gcc11.7z",
               build_type: "Release",
               cc: "gcc",
               cxx: "g++",
