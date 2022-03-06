@@ -6,9 +6,9 @@
      ^ for sub-subsections
      " for paragraphs
 
-###################
-ASAP documentation!
-###################
+############################
+ASAP common's documentation!
+############################
 
 .. |date| date::
 
@@ -35,13 +35,13 @@ Parts of the documentation
 
 :doc:`common <common:api>`
 --------------------------
-     *start here to understand the classes provided by the library and how to use
-     them to build your own state machine.*
+  *start here to understand the classes provided by the library and how to use
+  them to build your own state machine.*
 
 `Developer Guides <https://abdes.github.io/asap/master/html/project-development/index.html>`_
 ---------------------------------------------------------------------------------------------
-     *head over to the `asap` project documentation for detailed guides on how to
-     build and maintain the different targets in this project.*
+  *head over to the `asap` project documentation for detailed guides on how to
+  build and maintain the different targets in this project.*
 
 Acknowledgements
 ================
