@@ -18,9 +18,9 @@ asap_declare_module(
   AUTHOR_MAINTAINER
   "Abdessattar Sassi"
   VERSION_MAJOR
-  "1"
-  VERSION_MINOR
   "2"
+  VERSION_MINOR
+  "0"
   VERSION_PATCH
   "0")
 
