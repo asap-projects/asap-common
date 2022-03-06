@@ -48,7 +48,7 @@ mkdir _build && cd _build && cmake .. && cmake --build .
 
 or just use one of the predefined `CMake` presets. Detailed instructions and
 many useful commands are listed
-[here](https://abdes.github.io/asap/master/html/01-getting-started/useful-commands.html).
+[here](https://abdes.github.io/asap/asap_master/html/getting-started/useful-commands.html).
 
 ### CMake configurable build options
 
