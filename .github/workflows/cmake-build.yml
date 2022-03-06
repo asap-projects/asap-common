@@ -28,22 +28,12 @@ jobs:
               generators: "Visual Studio 17 2022",
             }
           - {
-              name: "Windows Latest MinGW",
-              os: windows-latest,
-              artifact: "windows_mingw.7z",
-              build_type: "Release",
-              cc: "gcc",
-              cxx: "g++",
-              archiver: "7z a",
-              generators: "Ninja",
-            }
-          - {
-              name: "Ubuntu_Latest_GCC",
+              name: "Ubuntu_GCC_10",
               os: ubuntu-latest,
-              artifact: "ubuntu_gcc.7z",
+              artifact: "ubuntu_gcc10.7z",
               build_type: "Release",
-              cc: "gcc",
-              cxx: "g++",
+              cc: "gcc-10",
+              cxx: "g++-10",
               archiver: "7z a",
               generators: "Ninja",
             }
@@ -122,6 +112,14 @@ jobs:
               COMMAND chmod +x ${cmake_dir}/cmake
             )
           endif()
+
+      - name: Install gcc-11
+        shell: bash
+        if: endsWith(matrix.config.name, 'GCC_11')
+        run: |
+          sudo apt-get update
+          sudo apt-get install gcc-11 g++-11
+          sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-11 110 --slave /usr/bin/g++ g++ /usr/bin/g++-11 --slave /usr/bin/gcov gcov /usr/bin/gcov-11
 
       - name: Download ccache
         id: ccache
