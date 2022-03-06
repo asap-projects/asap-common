@@ -4,7 +4,7 @@
 
 [![Build Matrix](https://github.com/asap-projects/asap-common/actions/workflows/cmake-build.yml/badge.svg?branch=master)](https://github.com/asap-projects/asap-common/actions/workflows/cmake-build.yml)
 
-## [Project Documentation](https://asap-projects.github.io/asap-common/)
+## [Project Documentation](https://asap-projects.github.io/asap-common/asap_common_master/html)
 
 ## Overview
 
