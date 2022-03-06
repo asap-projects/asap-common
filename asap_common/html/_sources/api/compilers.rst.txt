@@ -10,6 +10,10 @@
 Compiler detection
 ******************
 
+.. |date| date::
+
+Last Updated on |date|
+
 The `common` module provides a set of macros that help in dealing with the
 various compilers that may be used to build the software. These macros come in 4
 categories:
