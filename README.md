@@ -50,7 +50,7 @@ or just use one of the predefined `CMake` presets. Detailed instructions and
 many useful commands are listed
 [here](https://abdes.github.io/asap/asap_master/html/getting-started/useful-commands.html).
 
-### CMake configurable build options
+## CMake configurable build options
 
 ```cmake
 # Project options
@@ -61,4 +61,29 @@ option(ASAP_WITH_GOOGLE_ASAN    "Instrument code with address sanitizer"        
 option(ASAP_WITH_GOOGLE_UBSAN   "Instrument code with undefined behavior sanitizer"      OFF)
 option(ASAP_WITH_GOOGLE_TSAN    "Instrument code with thread sanitizer"                  OFF)
 option(ASAP_WITH_VALGRIND       "Builds targets with valgrind profilers added"           OFF)
+```
+
+## Making changes to this project
+
+Read the developer guides in the upstream
+[asap](https://abdes.github.io/asap/master/html/)
+project. If you're in a hurry, at least do the following:
+
+Only one time after the project is cloned, do the following:
+
+```bash
+npx husky install
+npm install -g @commitlint/cli @commitlint/config-conventional
+npm install -g standard-version
+```
+
+## Getting updates from upstream [`asap`](https://github.com/abdes/asap)
+
+In order to pull and merge updates from the upstream project, make sure to add
+it to the repo's remotes and disable pulling/merging tags from the upstream. We
+want tags to be limited to those made in this repo, not in the upstream.
+
+```bash
+git remote add upstream https://github.com/abdes/asap.git
+git config remote.upstream.tagopt --no-tags
 ```
