@@ -2,6 +2,10 @@
 ASAP common's documentation
 ###########################
 
+.. |date| date::
+
+Last Updated on |date|
+
 .. toctree::
    :maxdepth: 2
    :hidden:
@@ -13,7 +17,7 @@ ASAP common's documentation
 Welcome! This is the documentation for the *common* module, part of the *asap*
 project. This is a core module on which the other modules depend to get access
 to low level and frequently needed features such as platform/environment
-detection, assertions and C++ language features not consistently provided by 
+detection, assertions and C++ language features not consistently provided by
 all compilers on all platforms.
 
 Parts of the documentation

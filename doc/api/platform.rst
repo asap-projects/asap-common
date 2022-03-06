@@ -10,6 +10,10 @@
 Platform and environment preprocessor symbols
 *********************************************
 
+.. |date| date::
+
+Last Updated on |date|
+
 The *common* module provides a number of preprocessor symbols that can be used
 to detect the current platform and features available on it. These symbols are
 present in the `common/platform.h` header file.

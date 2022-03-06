@@ -10,6 +10,10 @@
 Project meta properties
 ***********************
 
+.. |date| date::
+
+Last Updated on |date|
+
 The include file `common/version.h` provides a number of constants representing
 various properties of the project updated at build time, including its version,
 description, etc.
