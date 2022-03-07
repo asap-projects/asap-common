@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.0.3](http://github.com/abdes/asap/compare/v2.0.2...v2.0.3) (2022-03-07)
+
+### Bug Fixes
+
+* enable code coverage all targets ([2399bc3](http://github.com/abdes/asap/commit/2399bc30297609ad90746e7926063faa91722a6a))
+
 ## [2.0.2](http://github.com/abdes/asap/compare/v2.0.1...v2.0.2) (2022-03-06)
 
 docs: add last-updated-on timestamp
