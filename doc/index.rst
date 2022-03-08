@@ -38,8 +38,8 @@ Parts of the documentation
   *start here to understand the classes provided by the library and how to use
   them to build your own state machine.*
 
-`Developer Guides <https://abdes.github.io/asap/master/html/project-development/index.html>`_
----------------------------------------------------------------------------------------------
+`Developer Guides <https://abdes.github.io/asap/asap_master/html/project-development/index.html>`_
+--------------------------------------------------------------------------------------------------
   *head over to the `asap` project documentation for detailed guides on how to
   build and maintain the different targets in this project.*
 
