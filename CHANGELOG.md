@@ -2,11 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.0.4](http://github.com/abdes/asap/compare/v2.0.3...v2.0.4) (2022-03-15)
+
+- speedup build and CI actions by removing unnecessary dependency on Google Test
+  and the apt-get update step.
+
+### Bug Fixes
+
+- only add sanitizers if building tests ([182d039](http://github.com/abdes/asap/commit/182d0399ee47989d356a3cc3a6a07d1b487b5e86))
+- use variable for checking if project must install targets ([3c4b088](http://github.com/abdes/asap/commit/3c4b088e4952634af6b27d2742ec6f68d07365c8))
+
 ## [2.0.3](http://github.com/abdes/asap/compare/v2.0.2...v2.0.3) (2022-03-07)
 
 ### Bug Fixes
 
-* enable code coverage all targets ([2399bc3](http://github.com/abdes/asap/commit/2399bc30297609ad90746e7926063faa91722a6a))
+- enable code coverage all targets ([2399bc3](http://github.com/abdes/asap/commit/2399bc30297609ad90746e7926063faa91722a6a))
 
 ## [2.0.2](http://github.com/abdes/asap/compare/v2.0.1...v2.0.2) (2022-03-06)
 
