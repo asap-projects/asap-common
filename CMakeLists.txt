@@ -149,27 +149,6 @@ message(
   "-- Building for ${CMAKE_BUILD_TYPE} with OPTION_CONTRACT_MODE : ${OPTION_CONTRACT_MODE}"
 )
 
-include(FetchContent)
-# We make sure that we have 'third_party' in the name so that the targets get
-# excluded from the generated target lists for the various tools.
-set(FETCHCONTENT_BASE_DIR ${CMAKE_BINARY_DIR}/third_party_deps)
-
-# ------------------------------------------------------------------------------
-# Testing
-# ------------------------------------------------------------------------------
-
-if(ASAP_BUILD_TESTS)
-  include(GoogleSanitizers)
-  include(CodeCoverage)
-  # Enable this target when the project has test cases
-  asap_add_code_coverage_all_targets(EXCLUDE */test/* *googlemock* *googletest*
-                                     /usr/*)
-  include(Valgrind)
-  include(FetchGoogleTest)
-  include(GoogleTest)
-  include(CTest)
-endif()
-
 # ------------------------------------------------------------------------------
 # RPATH setup
 # ------------------------------------------------------------------------------
@@ -187,6 +166,17 @@ if(NOT SYSTEM_DIR_INSTALL)
   else()
     set(CMAKE_INSTALL_RPATH "$ORIGIN/${ASAP_INSTALL_LIB}")
   endif()
+endif()
+
+# ------------------------------------------------------------------------------
+# Testing
+# ------------------------------------------------------------------------------
+
+if(ASAP_BUILD_TESTS)
+  include(CodeCoverage)
+  # Enable this target when the project has test cases
+  asap_add_code_coverage_all_targets(EXCLUDE */test/* *googlemock* *googletest*
+                                     /usr/*)
 endif()
 
 # Generate a clangd configuration file that points to the compilation database
