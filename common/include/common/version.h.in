@@ -1,0 +1,22 @@
+//===----------------------------------------------------------------------===//
+// Distributed under the 3-Clause BSD License. See accompanying file LICENSE or
+// copy at https://opensource.org/licenses/BSD-3-Clause).
+// SPDX-License-Identifier: BSD-3-Clause
+//===----------------------------------------------------------------------===//
+
+#pragma once
+
+constexpr const char *ASAP_PROJECT_NAME = "@META_PROJECT_NAME@";
+constexpr const char *ASAP_PROJECT_DESCRIPTION = "@META_PROJECT_DESCRIPTION@";
+
+constexpr const char *ASAP_AUTHOR_ORGANIZATION = "@META_AUTHOR_ORGANIZATION@";
+constexpr const char *ASAP_AUTHOR_DOMAIN = "@META_AUTHOR_DOMAIN@";
+constexpr const char *ASAP_AUTHOR_MAINTAINER = "@META_AUTHOR_MAINTAINER@";
+
+constexpr const char *ASAP_VERSION_MAJOR = "@META_VERSION_MAJOR@";
+constexpr const char *ASAP_VERSION_MINOR = "@META_VERSION_MINOR@";
+constexpr const char *ASAP_VERSION_PATCH = "@META_VERSION_PATCH@";
+constexpr const char *ASAP_VERSION_REVISION = "@META_VERSION_REVISION@";
+
+constexpr const char *ASAP_VERSION = "@META_VERSION@";
+constexpr const char *ASAP_NAME_VERSION = "@META_NAME_VERSION@";
