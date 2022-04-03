@@ -153,6 +153,10 @@ message(
 # RPATH setup
 # ------------------------------------------------------------------------------
 
+if(APPLE)
+  set(CMAKE_MACOSX_RPATH ON)
+endif()
+
 # Set runtime path
 set(CMAKE_SKIP_BUILD_RPATH FALSE) # Add absolute path to all dependencies for
                                   # BUILD
@@ -160,16 +164,49 @@ set(CMAKE_BUILD_WITH_INSTALL_RPATH FALSE)
 set(CMAKE_INSTALL_RPATH_USE_LINK_PATH FALSE)
 
 if(NOT SYSTEM_DIR_INSTALL)
-  # Find libraries relative to binary
-  if(APPLE)
-    set(CMAKE_INSTALL_RPATH "@loader_path/../../../${ASAP_INSTALL_LIB}")
-  else()
-    set(CMAKE_INSTALL_RPATH "$ORIGIN/${ASAP_INSTALL_LIB}")
-  endif()
+  set(CMAKE_INSTALL_RPATH "$ORIGIN/${ASAP_INSTALL_LIB}")
 endif()
+
+# ---- Add dependencies via CPM ----
+# see https://github.com/TheLartians/CPM.cmake for more info
+
+include(cmake/CPM.cmake)
+# We make sure that we have 'third_party' in the name so that the targets get
+# excluded from the generated target lists for the various tools.
+set(FETCHCONTENT_BASE_DIR ${CMAKE_BINARY_DIR}/third_party_deps)
+
+# ---- Speedup build using ccache (needs CPM) ----
+include(cmake/FasterBuild.cmake)
 
 # ------------------------------------------------------------------------------
 # Testing
+# ------------------------------------------------------------------------------
+
+if(ASAP_BUILD_TESTS)
+  include(GoogleSanitizers)
+  include(CodeCoverage)
+  # Enable this target when the project has test cases
+  # asap_add_code_coverage_all_targets( EXCLUDE */test/* *googlemock*
+  # *googletest* /usr/*)
+  include(Valgrind)
+
+  cpmaddpackage(
+    NAME
+    googletest
+    GIT_TAG
+    main
+    GITHUB_REPOSITORY
+    google/googletest
+    OPTIONS
+    "gtest_force_shared_crt ON"
+    "INSTALL_GTEST OFF")
+
+  include(GoogleTest)
+  include(CTest)
+endif()
+
+# ------------------------------------------------------------------------------
+# Top level code generation
 # ------------------------------------------------------------------------------
 
 if(ASAP_BUILD_TESTS)
