@@ -416,7 +416,7 @@ title="Print to PDF"
                 
   <section id="compiler-detection">
 <h1>Compiler detection<a class="headerlink" href="#compiler-detection" title="Permalink to this headline">#</a></h1>
-<p>Last Updated on 2022-04-07</p>
+<p>Last Updated on 2022-05-01</p>
 <p>The <cite>common</cite> module provides a set of macros that help in dealing with the
 various compilers that may be used to build the software. These macros come in 4
 categories:</p>
@@ -808,10 +808,10 @@ Additionally, some non-clang-based compilers support a subset of the macros.</p>
 <span class="target" id="compilers_8h_1a80409da3f1159c633eb6b08ad7c5513a"></span><span class="sig-name descname"><span class="n"><span class="pre">ASAP_UNREACHABLE</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#c.ASAP_UNREACHABLE" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Inform the compiler/analyzer that the code should never be reached (even with invalid input). </p>
 <p>Example <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">switch</span><span class="w"> </span><span class="p">(</span><span class="n">foo</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">  </span><span class="k">case</span><span class="w"> </span><span class="nl">BAR</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="k">case</span><span class="w"> </span><span class="no">BAR</span><span class="p">:</span><span class="w"></span>
 <span class="w">    </span><span class="n">do_something</span><span class="p">();</span><span class="w"></span>
 <span class="w">    </span><span class="k">break</span><span class="p">;</span><span class="w"></span>
-<span class="w">  </span><span class="k">case</span><span class="w"> </span><span class="nl">BAZ</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="k">case</span><span class="w"> </span><span class="no">BAZ</span><span class="p">:</span><span class="w"></span>
 <span class="w">    </span><span class="n">do_something_else</span><span class="p">();</span><span class="w"></span>
 <span class="w">    </span><span class="k">break</span><span class="p">;</span><span class="w"></span>
 <span class="w">  </span><span class="k">default</span><span class="o">:</span><span class="w"></span>
@@ -834,9 +834,9 @@ Additionally, some non-clang-based compilers support a subset of the macros.</p>
 <dd><p>Inform the compiler/analyzer that the code should never be reached or, for compilers which don’t provide a way to provide such information, return a value. </p>
 <p>Example <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">handle_code</span><span class="p">(</span><span class="k">enum</span><span class="w"> </span><span class="nc">Foo</span><span class="w"> </span><span class="n">code</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">  </span><span class="k">switch</span><span class="w"> </span><span class="p">(</span><span class="n">code</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">  </span><span class="k">case</span><span class="w"> </span><span class="nl">FOO_BAR</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="k">case</span><span class="w"> </span><span class="nl">FOO_BAZ</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="k">case</span><span class="w"> </span><span class="nl">FOO_QUX</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="k">case</span><span class="w"> </span><span class="no">FOO_BAR</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="k">case</span><span class="w"> </span><span class="no">FOO_BAZ</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="k">case</span><span class="w"> </span><span class="no">FOO_QUX</span><span class="p">:</span><span class="w"></span>
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
 <span class="w">  </span><span class="p">}</span><span class="w"></span>
 
