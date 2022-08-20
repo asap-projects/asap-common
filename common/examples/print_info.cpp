@@ -4,11 +4,11 @@
 // SPDX-License-Identifier: BSD-3-Clause
 //===----------------------------------------------------------------------===//
 
+#include <string>
+
 #include <common/compilers.h>
 #include <common/platform.h>
 #include <common/version.h>
-
-#include <string>
 
 namespace {
 auto VersionInfo() -> std::string {
@@ -59,7 +59,7 @@ auto main(int /*argc*/, char * /*argv*/[]) -> int {
   std::cout << "-- "
             << "Built on " << PlatformInfo() << " with " << Compiler();
 
-  auto compiler_version = CompilerVersion();
+  const auto compiler_version = CompilerVersion();
   if (compiler_version != 0) {
     std::cout << " " << compiler_version;
   }

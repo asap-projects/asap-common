@@ -52,7 +52,7 @@
 // Any Linux based OS, including Gnu/Linux and Android
 #if defined(__linux__)
 #define ASAP_LINUX
-#if defined(__gnu_linux__) // Specificaly Gnu/Linux
+#if defined(__gnu_linux__) // Specifically Gnu/Linux
 #define ASAP_GNU_LINUX
 #endif
 #if defined(__ANDROID__) // Android (which also defines __linux__)

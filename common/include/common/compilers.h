@@ -69,7 +69,7 @@
  * This macro is always defined, and provides a convenient way to check for
  * features based on the version number.
  *
- * \note In most cases for clang, you shouldn't test its version number, you
+ * \note In most cases for clang, you should not test its version number, you
  * should use the feature checking macros
  * (https://clang.llvm.org/docs/LanguageExtensions.html#feature-checking-macros).
  *
@@ -130,7 +130,7 @@
 #define ASAP_MSVC_VERSION_CHECK(major, minor, patch) (0)
 #elif defined(_MSC_VER) && (_MSC_VER >= 1400)
 #define ASAP_MSVC_VERSION_CHECK(major, minor, patch)                           \
-  (_MSC_FULL_VER >= ((major * 10000000) + (minor * 100000) + (patch)))
+  (_MSC_FULL_VER >= (((major)*10000000) + ((minor)*100000) + (patch)))
 #elif defined(_MSC_VER) && (_MSC_VER >= 1200)
 #define ASAP_MSVC_VERSION_CHECK(major, minor, patch)                           \
   (_MSC_FULL_VER >= ((major * 1000000) + (minor * 10000) + (patch)))
