@@ -4,6 +4,10 @@ All notable changes to this project will be documented in this file. See
 [standard-version](https://github.com/conventional-changelog/standard-version)
 for commit guidelines.
 
+## [2.0.6](http://github.com/abdes/asap/compare/v2.0.5...v2.0.6) (2022-08-20)
+
+* code cleanup to eliminate compiler/linter warnings and improve code quality.
+
 ## [2.0.5](http://github.com/abdes/asap/compare/v2.0.4...v2.0.5) (2022-08-20)
 
 ### Features
