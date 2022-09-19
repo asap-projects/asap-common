@@ -4,15 +4,18 @@
 # SPDX-License-Identifier: BSD-3-Clause
 # ===-----------------------------------------------------------------------===#
 
+set(my_name "common")
+asap_push_module("${my_name}")
+
 # ------------------------------------------------------------------------------
 # Meta information about the this module
 # ------------------------------------------------------------------------------
 
 asap_declare_module(
   MODULE_NAME
-  "common"
+  "${my_name}"
   DESCRIPTION
-  "Common functionality for asap based projects"
+  "Common functionality for asap based projects."
   GITHUB_REPO
   "https://github.com/abdes/asap"
   AUTHOR_MAINTAINER
@@ -139,3 +142,5 @@ if(${META_PROJECT_ID}_INSTALL)
       COMPONENT ${MODULE_TARGET_NAME}_docs)
   endif()
 endif()
+
+asap_pop_module("${my_name}")
