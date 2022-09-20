@@ -8,15 +8,17 @@
 # Build instructions
 # ==============================================================================
 
-set(MAIN_TEST_TARGET_NAME ${MODULE_TARGET_NAME}_info)
+if(ASAP_BUILD_TESTS)
+  set(MAIN_TEST_TARGET_NAME ${MODULE_TARGET_NAME}_info)
 
-asap_add_test(
-  ${MAIN_TEST_TARGET_NAME}
-  INTEGRATION_TEST
-  POST_BUILD
-  SRCS
-  "print_info.cpp"
-  LINK
-  asap::common
-  COMMENT
-  "ASAP common post-build info example")
+  asap_add_test(
+    ${MAIN_TEST_TARGET_NAME}
+    INTEGRATION_TEST
+    POST_BUILD
+    SRCS
+    "print_info.cpp"
+    LINK
+    asap::common
+    COMMENT
+    "ASAP common post-build info example")
+endif()
