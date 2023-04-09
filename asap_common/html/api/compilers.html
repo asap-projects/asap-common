@@ -1,422 +1,362 @@
 
+
 <!DOCTYPE html>
 
-<html>
+
+<html lang="en" >
+
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
     <title>Compiler detection &#8212; Module: common</title>
-    
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
 
-    
-  <link rel="stylesheet"
-    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    
+  
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
-    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'api/compilers';</script>
+    <link rel="icon" href="../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Project meta properties" href="meta.html" />
     <link rel="prev" title="Platform and environment preprocessor symbols" href="platform.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
-    
-
-    <!-- Google Analytics -->
-    
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
-<!-- Checkboxes to toggle the left sidebar -->
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
-<label class="overlay overlay-navbar" for="__navigation">
-    <div class="visually-hidden">Toggle navigation sidebar</div>
-</label>
-<!-- Checkboxes to toggle the in-page toc -->
-<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
-<label class="overlay overlay-pagetoc" for="__page-toc">
-    <div class="visually-hidden">Toggle in-page Table of Contents</div>
-</label>
-<!-- Headers at the top -->
-<div class="announcement header-item noprint"></div>
-<div class="header header-item noprint"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-    
-    <div class="container-fluid" id="banner"></div>
-
-    
-
-    <div class="container-xl">
-      <div class="row">
-          
-<!-- Sidebar -->
-<div class="bd-sidebar noprint" id="site-navigation">
-    <div class="bd-sidebar__content">
-        <div class="bd-sidebar__top"><div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="../index.html">
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
       
-        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+      <div class="bd-sidebar-primary bd-sidebar">
         
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+    
+    
       
-      
-      <img src="../_static/logo.png" class="logo" alt="logo">
-      
-      
-      <h1 class="site-logo" id="site-title">Module: common</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
         <ul class="current nav bd-sidenav">
- <li class="toctree-l1 current active has-children">
-  <a class="reference internal" href="../api.html">
-   API
-  </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
-  <label for="toctree-checkbox-1">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul class="current">
-   <li class="toctree-l2">
-    <a class="reference internal" href="platform.html">
-     Platform detection
-    </a>
-   </li>
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
-     Compiler detection
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="meta.html">
-     Project meta properties
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../license.html">
-   License
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../version.html">
-   Version
-  </a>
- </li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../api.html">API</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="platform.html">Platform detection</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Compiler detection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="meta.html">Project meta properties</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../license.html">License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../version.html">Version</a></li>
 </ul>
 
     </div>
 </nav></div>
-        <div class="bd-sidebar__bottom">
-             <!-- To handle the deprecated key -->
-            
-        </div>
     </div>
-    <div id="rtd-footer-container"></div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/asap-projects/asap-common" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/asap-projects/asap-common/issues/new?title=Issue%20on%20page%20%2Fapi/compilers.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
 </div>
 
 
-          
-
-
-          
-<!-- A tiny helper pixel to detect if we've scrolled -->
-<div class="sbt-scroll-pixel-helper"></div>
-<!-- Main content -->
-<div class="col py-0 content-container">
-    
-    <div class="header-article row sticky-top noprint">
-        
 
 
 
-<div class="col py-1 d-flex header-article-main">
-    <div class="header-article__left">
-        
-        <label for="__navigation"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="right"
-title="Toggle navigation"
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/api/compilers.rst" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
-  <i class="fas fa-bars"></i>
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
   </span>
-
-</label>
-
-        
-    </div>
-    <div class="header-article__right">
-<button onclick="toggleFullScreen()"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="bottom"
-title="Fullscreen mode"
+<span class="btn__text-container">.rst</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
   <i class="fas fa-expand"></i>
   </span>
 
 </button>
 
-<div class="menu-dropdown menu-dropdown-repository-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Source repositories">
-      <i class="fab fa-github"></i>
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://github.com/asap-projects/asap-common"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Source repository"
->
-  
+`);
+</script>
 
-<span class="headerbtn__icon-container">
-  <i class="fab fa-github"></i>
-  </span>
-<span class="headerbtn__text-container">repository</span>
-</a>
-
-      </li>
-      
-      <li>
-        <a href="https://github.com/asap-projects/asap-common/issues/new?title=Issue%20on%20page%20%2Fapi/compilers.html&body=Your%20issue%20content%20here."
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Open an issue"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-lightbulb"></i>
-  </span>
-<span class="headerbtn__text-container">open issue</span>
-</a>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-
-<div class="menu-dropdown menu-dropdown-download-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Download this page">
-      <i class="fas fa-download"></i>
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="../_sources/api/compilers.rst.txt"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Download source file"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="headerbtn__text-container">.rst</span>
-</a>
-
-      </li>
-      
-      <li>
-        
-<button onclick="printPdf(this)"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="left"
-title="Print to PDF"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file-pdf"></i>
-  </span>
-<span class="headerbtn__text-container">.pdf</span>
-</button>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
 </label>
-
+</div></div>
+      
     </div>
+  
 </div>
-
-<!-- Table of contents -->
-<div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#identification">
-   Identification
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#version-checking">
-   Version checking
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#feature-testing">
-   Feature testing
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#attributes">
-     Attributes
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#builtin-functions">
-     Builtin functions
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#features">
-     Features
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#diagnostics">
-   Diagnostics
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#optimization-hints">
-   Optimization hints
-  </a>
- </li>
-</ul>
-
-    </nav>
 </div>
-    </div>
-    <div class="article row">
-        <div class="col pl-md-3 pl-lg-5 content-container">
-            <!-- Table of contents that is only displayed when printing the page -->
-            <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Compiler detection</h1>
-                <!-- Table of contents -->
-                <div id="print-main-content">
-                    <div id="jb-print-toc">
-                        
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#identification">
-   Identification
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#version-checking">
-   Version checking
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#feature-testing">
-   Feature testing
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#attributes">
-     Attributes
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#builtin-functions">
-     Builtin functions
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#features">
-     Features
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#diagnostics">
-   Diagnostics
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#optimization-hints">
-   Optimization hints
-  </a>
- </li>
-</ul>
+              
+              
 
-                        </nav>
-                    </div>
-                </div>
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Compiler detection</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
             </div>
-            <main id="main-content" role="main">
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#identification">Identification</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#version-checking">Version checking</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#feature-testing">Feature testing</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#attributes">Attributes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#builtin-functions">Builtin functions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#features">Features</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#diagnostics">Diagnostics</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optimization-hints">Optimization hints</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
                 
-              <div>
-                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
   <section id="compiler-detection">
-<h1>Compiler detection<a class="headerlink" href="#compiler-detection" title="Permalink to this headline">#</a></h1>
-<p>Last Updated on 2022-09-20</p>
+<h1>Compiler detection<a class="headerlink" href="#compiler-detection" title="Permalink to this heading">#</a></h1>
+<p>Last Updated on 2023-04-09</p>
 <p>The <cite>common</cite> module provides a set of macros that help in dealing with the
 various compilers that may be used to build the software. These macros come in 4
 categories:</p>
@@ -428,7 +368,7 @@ categories:</p>
 <li><p><a class="reference internal" href="#optimization-hints">Optimization hints</a></p></li>
 </ul>
 <section id="identification">
-<h2>Identification<a class="headerlink" href="#identification" title="Permalink to this headline">#</a></h2>
+<h2>Identification<a class="headerlink" href="#identification" title="Permalink to this heading">#</a></h2>
 <p>These macros are defined only if the compiler in question is in use (e.g.,
 ASAP_MSVC_VERSION is only defined when using the MSVC compiler). When they are
 defined, they are defined to the version of the compiler currently in use,
@@ -454,7 +394,7 @@ __GNUC__.</p>
 </p>
 <p><div class="admonition seealso">
 <p class="admonition-title">See also</p>
-<p><a class="reference internal" href="#compilers_8h_1ade8b01eb097cdd297366828302b59cf9"><span class="std std-ref">ASAP_CLANG_VERSION_CHECK</span></a> </p>
+<p><a class="reference internal" href="#compilers_8h_1ade8b01eb097cdd297366828302b59cf9"><span class="std std-ref">ASAP_CLANG_VERSION_CHECK</span></a></p>
 </div>
 </p>
 </dd></dl>
@@ -472,7 +412,7 @@ __GNUC__.</p>
 </p>
 <p><div class="admonition seealso">
 <p class="admonition-title">See also</p>
-<p><a class="reference internal" href="#compilers_8h_1a928578ffa066e6fd08183ec5286c76ba"><span class="std std-ref">ASAP_MSVC_VERSION_CHECK</span></a> </p>
+<p><a class="reference internal" href="#compilers_8h_1a928578ffa066e6fd08183ec5286c76ba"><span class="std std-ref">ASAP_MSVC_VERSION_CHECK</span></a></p>
 </div>
 </p>
 </dd></dl>
@@ -490,7 +430,7 @@ __GNUC__.</p>
 </p>
 <p><div class="admonition seealso">
 <p class="admonition-title">See also</p>
-<p><a class="reference internal" href="#compilers_8h_1abb51447bef08a3cefb73859defaeefd3"><span class="std std-ref">ASAP_GNUC_VERSION_CHECK</span></a> </p>
+<p><a class="reference internal" href="#compilers_8h_1abb51447bef08a3cefb73859defaeefd3"><span class="std std-ref">ASAP_GNUC_VERSION_CHECK</span></a></p>
 </div>
 </p>
 </dd></dl>
@@ -508,14 +448,14 @@ __GNUC__.</p>
 </p>
 <p><div class="admonition seealso">
 <p class="admonition-title">See also</p>
-<p><a class="reference internal" href="#compilers_8h_1af1ef77b248fbc0bdb247f8e28e6c8bf7"><span class="std std-ref">ASAP_GCC_VERSION_CHECK</span></a> </p>
+<p><a class="reference internal" href="#compilers_8h_1af1ef77b248fbc0bdb247f8e28e6c8bf7"><span class="std std-ref">ASAP_GCC_VERSION_CHECK</span></a></p>
 </div>
 </p>
 </dd></dl>
 
 </section>
 <section id="version-checking">
-<h2>Version checking<a class="headerlink" href="#version-checking" title="Permalink to this headline">#</a></h2>
+<h2>Version checking<a class="headerlink" href="#version-checking" title="Permalink to this heading">#</a></h2>
 <p>For each compiler for which there is a ASAP_*_VERSION macro, there is a
 ASAP_*_VERSION_CHECK(major,minor,revision) macro. These macros are always
 defined, and will return true (1) if the current compiler corresponds to the
@@ -536,7 +476,7 @@ Example <div class="highlight-cpp notranslate"><div class="highlight"><pre><span
 </p>
 <p><div class="admonition seealso">
 <p class="admonition-title">See also</p>
-<p><a class="reference internal" href="#compilers_8h_1a03bfac12206228025c9fd2625e54e75e"><span class="std std-ref">ASAP_CLANG_VERSION</span></a> </p>
+<p><a class="reference internal" href="#compilers_8h_1a03bfac12206228025c9fd2625e54e75e"><span class="std std-ref">ASAP_CLANG_VERSION</span></a></p>
 </div>
 </p>
 <div class="admonition note">
@@ -544,7 +484,7 @@ Example <div class="highlight-cpp notranslate"><div class="highlight"><pre><span
 <p>In most cases for clang, you should not test its version number, you should use the feature checking macros (<a class="reference external" href="https://clang.llvm.org/docs/LanguageExtensions.html#feature-checking-macros">https://clang.llvm.org/docs/LanguageExtensions.html#feature-checking-macros</a>).</p>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>true (1) if the current compiler corresponds to the macro name, and the compiler version is greater than or equal to the provided values.</p>
 </dd>
 </dl>
@@ -563,11 +503,11 @@ Example <div class="highlight-cpp notranslate"><div class="highlight"><pre><span
 </p>
 <p><div class="admonition seealso">
 <p class="admonition-title">See also</p>
-<p><a class="reference internal" href="#compilers_8h_1a9abe6f8b2e76df635561b53e8b2c6c6b"><span class="std std-ref">ASAP_MSVC_VERSION</span></a> </p>
+<p><a class="reference internal" href="#compilers_8h_1a9abe6f8b2e76df635561b53e8b2c6c6b"><span class="std std-ref">ASAP_MSVC_VERSION</span></a></p>
 </div>
 </p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>true (1) if the current compiler corresponds to the macro name, and the compiler version is greater than or equal to the provided values.</p>
 </dd>
 </dl>
@@ -586,11 +526,11 @@ Example <div class="highlight-cpp notranslate"><div class="highlight"><pre><span
 </p>
 <p><div class="admonition seealso">
 <p class="admonition-title">See also</p>
-<p><a class="reference internal" href="#compilers_8h_1a23b1ae3f345ffe26a1ba669c1621f5f3"><span class="std std-ref">ASAP_GNUC_VERSION</span></a> </p>
+<p><a class="reference internal" href="#compilers_8h_1a23b1ae3f345ffe26a1ba669c1621f5f3"><span class="std std-ref">ASAP_GNUC_VERSION</span></a></p>
 </div>
 </p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>true (1) if the current compiler corresponds to the macro name, and the compiler version is greater than or equal to the provided values.</p>
 </dd>
 </dl>
@@ -609,11 +549,11 @@ Example <div class="highlight-cpp notranslate"><div class="highlight"><pre><span
 </p>
 <p><div class="admonition seealso">
 <p class="admonition-title">See also</p>
-<p><a class="reference internal" href="#compilers_8h_1a62c2fa7aef24a677fc26e6164ce229bc"><span class="std std-ref">ASAP_GCC_VERSION</span></a> </p>
+<p><a class="reference internal" href="#compilers_8h_1a62c2fa7aef24a677fc26e6164ce229bc"><span class="std std-ref">ASAP_GCC_VERSION</span></a></p>
 </div>
 </p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>true (1) if the current compiler corresponds to the macro name, and the compiler version is greater than or equal to the provided values.</p>
 </dd>
 </dl>
@@ -621,7 +561,7 @@ Example <div class="highlight-cpp notranslate"><div class="highlight"><pre><span
 
 </section>
 <section id="feature-testing">
-<h2>Feature testing<a class="headerlink" href="#feature-testing" title="Permalink to this headline">#</a></h2>
+<h2>Feature testing<a class="headerlink" href="#feature-testing" title="Permalink to this heading">#</a></h2>
 <p><cite>Clang`</cite> introduced an easier way to detect different features which doesn’t
 rely on knowledge of the version number it first appeared in. Not only is this
 the preferred method for checking for features in <cite>clang</cite>, it’s pretty much the
@@ -629,7 +569,7 @@ only way!</p>
 <p>Many clang-based compilers implement these macros, including Apple.
 Additionally, some non-clang-based compilers support a subset of the macros.</p>
 <section id="attributes">
-<h3>Attributes<a class="headerlink" href="#attributes" title="Permalink to this headline">#</a></h3>
+<h3>Attributes<a class="headerlink" href="#attributes" title="Permalink to this heading">#</a></h3>
 <dl class="cpp macro">
 <dt class="sig sig-object cpp" id="c.ASAP_HAS_ATTRIBUTE">
 <span class="target" id="compilers_8h_1aa87711a897e1b6cdf58be5b95cf05f37"></span><span class="sig-name descname"><span class="n"><span class="pre">ASAP_HAS_ATTRIBUTE</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">attribute</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.ASAP_HAS_ATTRIBUTE" title="Permalink to this definition">#</a><br /></dt>
@@ -640,12 +580,12 @@ Additionally, some non-clang-based compilers support a subset of the macros.</p>
 <span class="cp">#  define DEPRECATED(msg)</span>
 <span class="cp">#endif</span>
 
-<span class="n">DEPRECATED</span><span class="p">(</span><span class="s">&quot;foo() has been deprecated&quot;</span><span class="p">)</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">foo</span><span class="p">();</span><span class="w"></span>
+<span class="n">DEPRECATED</span><span class="p">(</span><span class="s">&quot;foo() has been deprecated&quot;</span><span class="p">)</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">foo</span><span class="p">();</span>
 </pre></div>
 </div>
 </p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>non-zero value if the attribute is supported by the compiler. </p>
 </dd>
 </dl>
@@ -656,14 +596,14 @@ Additionally, some non-clang-based compilers support a subset of the macros.</p>
 <span class="target" id="compilers_8h_1a24aeb79127cfbab9e6bbbe7b0ec0afdf"></span><span class="sig-name descname"><span class="n"><span class="pre">ASAP_HAS_CPP_ATTRIBUTE</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">attribute</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.ASAP_HAS_CPP_ATTRIBUTE" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Checks for the presence of a C++ compiler attribute named by <code class="docutils literal notranslate"><span class="pre">attribute</span></code>. </p>
 <p>Example <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#if ASAP_HAS_CPP_ATTRIBUTE(nodiscard)</span>
-<span class="p">[[</span><span class="n">nodiscard</span><span class="p">]]</span><span class="w"></span>
+<span class="p">[[</span><span class="n">nodiscard</span><span class="p">]]</span>
 <span class="cp">#endif</span>
-<span class="kt">int</span><span class="w"> </span><span class="n">foo</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">i</span><span class="p">;</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
+<span class="kt">int</span><span class="w"> </span><span class="n">foo</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">i</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
 </pre></div>
 </div>
 </p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>non-zero value if the attribute is supported by the compiler. </p>
 </dd>
 </dl>
@@ -671,21 +611,21 @@ Additionally, some non-clang-based compilers support a subset of the macros.</p>
 
 </section>
 <section id="builtin-functions">
-<h3>Builtin functions<a class="headerlink" href="#builtin-functions" title="Permalink to this headline">#</a></h3>
+<h3>Builtin functions<a class="headerlink" href="#builtin-functions" title="Permalink to this heading">#</a></h3>
 <dl class="cpp macro">
 <dt class="sig sig-object cpp" id="c.ASAP_HAS_BUILTIN">
 <span class="target" id="compilers_8h_1a9858668714b451336ea1efac006f2e6c"></span><span class="sig-name descname"><span class="n"><span class="pre">ASAP_HAS_BUILTIN</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">builtin</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.ASAP_HAS_BUILTIN" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Checks for the presence of a compiler builtin function named by <code class="docutils literal notranslate"><span class="pre">builtin</span></code>. </p>
 <p>Example <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#if ASAP_HAS_BUILTIN(__builtin_trap)</span>
-<span class="w">  </span><span class="n">__builtin_trap</span><span class="p">();</span><span class="w"></span>
+<span class="w">  </span><span class="n">__builtin_trap</span><span class="p">();</span>
 <span class="cp">#else</span>
-<span class="w">  </span><span class="n">abort</span><span class="p">();</span><span class="w"></span>
+<span class="w">  </span><span class="n">abort</span><span class="p">();</span>
 <span class="cp">#endif</span>
 </pre></div>
 </div>
 </p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>non-zero value if the builtin function is supported by the compiler. </p>
 </dd>
 </dl>
@@ -693,19 +633,19 @@ Additionally, some non-clang-based compilers support a subset of the macros.</p>
 
 </section>
 <section id="features">
-<h3>Features<a class="headerlink" href="#features" title="Permalink to this headline">#</a></h3>
+<h3>Features<a class="headerlink" href="#features" title="Permalink to this heading">#</a></h3>
 <dl class="cpp macro">
 <dt class="sig sig-object cpp" id="c.ASAP_HAS_FEATURE">
 <span class="target" id="compilers_8h_1a68bdccd5ea3c5168123eb58afce8f18a"></span><span class="sig-name descname"><span class="n"><span class="pre">ASAP_HAS_FEATURE</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">feature</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.ASAP_HAS_FEATURE" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Checks for the presence of a compiler feature named by <code class="docutils literal notranslate"><span class="pre">feature</span></code>. </p>
 <p>Example <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#if ASAP_HAS_FEATURE(attribute_overloadable) || ASAP_HAS_FEATURE(blocks)</span>
-<span class="p">...</span><span class="w"></span>
+<span class="p">...</span>
 <span class="cp">#endif</span>
 </pre></div>
 </div>
 </p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>non-zero value if the feature is supported by the compiler. </p>
 </dd>
 </dl>
@@ -714,7 +654,7 @@ Additionally, some non-clang-based compilers support a subset of the macros.</p>
 </section>
 </section>
 <section id="diagnostics">
-<h2>Diagnostics<a class="headerlink" href="#diagnostics" title="Permalink to this headline">#</a></h2>
+<h2>Diagnostics<a class="headerlink" href="#diagnostics" title="Permalink to this heading">#</a></h2>
 <dl class="cpp macro">
 <dt class="sig sig-object cpp" id="c.ASAP_PRAGMA">
 <span class="target" id="compilers_8h_1a2caca72c74f5abc30bb3bcd40c150b73"></span><span class="sig-name descname"><span class="n"><span class="pre">ASAP_PRAGMA</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">value</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.ASAP_PRAGMA" title="Permalink to this definition">#</a><br /></dt>
@@ -726,18 +666,18 @@ Additionally, some non-clang-based compilers support a subset of the macros.</p>
 <dt class="sig sig-object cpp" id="c.ASAP_DIAGNOSTIC_PUSH">
 <span class="target" id="compilers_8h_1a5bf59cff71f049282ce285408df7b362"></span><span class="sig-name descname"><span class="n"><span class="pre">ASAP_DIAGNOSTIC_PUSH</span></span></span><a class="headerlink" href="#c.ASAP_DIAGNOSTIC_PUSH" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Remember the current state of the compiler’s diagnostics. </p>
-<p>Example <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">ASAP_DIAGNOSTIC_PUSH</span><span class="w"></span>
+<p>Example <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">ASAP_DIAGNOSTIC_PUSH</span>
 <span class="cp">#if defined(__clang__) &amp;&amp; ASAP_HAS_WARNING(&quot;-Wunused-const-variable&quot;)</span>
 <span class="cp">#pragma clang diagnostic ignored &quot;-Wunused-const-variable&quot;</span>
 <span class="cp">#endif</span>
-<span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="k">const</span><span class="w"> </span><span class="n">FOO</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;foo&quot;</span><span class="p">;</span><span class="w"></span>
-<span class="n">ASAP_DIAGNOSTIC_POP</span><span class="w"></span>
+<span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="k">const</span><span class="w"> </span><span class="n">FOO</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;foo&quot;</span><span class="p">;</span>
+<span class="n">ASAP_DIAGNOSTIC_POP</span>
 </pre></div>
 </div>
 </p>
 <p><div class="admonition seealso">
 <p class="admonition-title">See also</p>
-<p><a class="reference internal" href="#compilers_8h_1a32c272e21fe91eea38ec199227775910"><span class="std std-ref">ASAP_DIAGNOSTIC_POP</span></a> </p>
+<p><a class="reference internal" href="#compilers_8h_1a32c272e21fe91eea38ec199227775910"><span class="std std-ref">ASAP_DIAGNOSTIC_POP</span></a></p>
 </div>
 </p>
 </dd></dl>
@@ -746,18 +686,18 @@ Additionally, some non-clang-based compilers support a subset of the macros.</p>
 <dt class="sig sig-object cpp" id="c.ASAP_DIAGNOSTIC_POP">
 <span class="target" id="compilers_8h_1a32c272e21fe91eea38ec199227775910"></span><span class="sig-name descname"><span class="n"><span class="pre">ASAP_DIAGNOSTIC_POP</span></span></span><a class="headerlink" href="#c.ASAP_DIAGNOSTIC_POP" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Return the state of the compiler’s diagnostics to the value from the last push. </p>
-<p>Example <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">ASAP_DIAGNOSTIC_PUSH</span><span class="w"></span>
+<p>Example <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">ASAP_DIAGNOSTIC_PUSH</span>
 <span class="cp">#if defined(__clang__) &amp;&amp; ASAP_HAS_WARNING(&quot;-Wunused-const-variable&quot;)</span>
 <span class="cp">#pragma clang diagnostic ignored &quot;-Wunused-const-variable&quot;</span>
 <span class="cp">#endif</span>
-<span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="k">const</span><span class="w"> </span><span class="n">FOO</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;foo&quot;</span><span class="p">;</span><span class="w"></span>
-<span class="n">ASAP_DIAGNOSTIC_POP</span><span class="w"></span>
+<span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="k">const</span><span class="w"> </span><span class="n">FOO</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;foo&quot;</span><span class="p">;</span>
+<span class="n">ASAP_DIAGNOSTIC_POP</span>
 </pre></div>
 </div>
 </p>
 <p><div class="admonition seealso">
 <p class="admonition-title">See also</p>
-<p><a class="reference internal" href="#compilers_8h_1a5bf59cff71f049282ce285408df7b362"><span class="std std-ref">ASAP_DIAGNOSTIC_PUSH</span></a> </p>
+<p><a class="reference internal" href="#compilers_8h_1a5bf59cff71f049282ce285408df7b362"><span class="std std-ref">ASAP_DIAGNOSTIC_PUSH</span></a></p>
 </div>
 </p>
 </dd></dl>
@@ -766,17 +706,17 @@ Additionally, some non-clang-based compilers support a subset of the macros.</p>
 <dt class="sig sig-object cpp" id="c.ASAP_HAS_WARNING">
 <span class="target" id="compilers_8h_1a1768a3acc82ef008bcfaaa80ae15d5a6"></span><span class="sig-name descname"><span class="n"><span class="pre">ASAP_HAS_WARNING</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">warning</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.ASAP_HAS_WARNING" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Checks for the presence of a compiler warning named by <code class="docutils literal notranslate"><span class="pre">warning</span></code>. </p>
-<p>Example <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">ASAP_DIAGNOSTIC_PUSH</span><span class="w"></span>
+<p>Example <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">ASAP_DIAGNOSTIC_PUSH</span>
 <span class="cp">#if defined(__clang__) &amp;&amp; ASAP_HAS_WARNING(&quot;-Wunused-const-variable&quot;)</span>
 <span class="cp">#pragma clang diagnostic ignored &quot;-Wunused-const-variable&quot;</span>
 <span class="cp">#endif</span>
-<span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="k">const</span><span class="w"> </span><span class="n">FOO</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;foo&quot;</span><span class="p">;</span><span class="w"></span>
-<span class="n">ASAP_DIAGNOSTIC_POP</span><span class="w"></span>
+<span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="k">const</span><span class="w"> </span><span class="n">FOO</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;foo&quot;</span><span class="p">;</span>
+<span class="n">ASAP_DIAGNOSTIC_POP</span>
 </pre></div>
 </div>
 </p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>non-zero value if the feature is supported by the compiler. </p>
 </dd>
 </dl>
@@ -784,46 +724,45 @@ Additionally, some non-clang-based compilers support a subset of the macros.</p>
 
 </section>
 <section id="optimization-hints">
-<h2>Optimization hints<a class="headerlink" href="#optimization-hints" title="Permalink to this headline">#</a></h2>
+<h2>Optimization hints<a class="headerlink" href="#optimization-hints" title="Permalink to this heading">#</a></h2>
 <dl class="cpp macro">
 <dt class="sig sig-object cpp" id="c.ASAP_ASSUME">
 <span class="target" id="compilers_8h_1a0b86da0b0f9b90b414c2c0ed22d3b3d0"></span><span class="sig-name descname"><span class="n"><span class="pre">ASAP_ASSUME</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">expr</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.ASAP_ASSUME" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Inform the compiler/analyzer that the provided expression should always evaluate to a non-false value. </p>
 <p>Note that the compiler is free to assume that the expression never evaluates to true and therefore can elide code paths where it does evaluate to true.</p>
-<p>Example <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">unsigned</span><span class="w"> </span><span class="nf">sum_small</span><span class="p">(</span><span class="kt">unsigned</span><span class="w"> </span><span class="n">data</span><span class="p">[],</span><span class="w"> </span><span class="kt">size_t</span><span class="w"> </span><span class="n">count</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">  </span><span class="n">__builtin_assume</span><span class="p">(</span><span class="n">count</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">4</span><span class="p">);</span><span class="w"></span>
-<span class="w">  </span><span class="kt">unsigned</span><span class="w"> </span><span class="n">sum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
-<span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">size_t</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">count</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="n">sum</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">];</span><span class="w"></span>
-<span class="w">  </span><span class="p">}</span><span class="w"></span>
-<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">sum</span><span class="p">;</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<p>Example <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">unsigned</span><span class="w"> </span><span class="nf">sum_small</span><span class="p">(</span><span class="kt">unsigned</span><span class="w"> </span><span class="n">data</span><span class="p">[],</span><span class="w"> </span><span class="kt">size_t</span><span class="w"> </span><span class="n">count</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="n">__builtin_assume</span><span class="p">(</span><span class="n">count</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">4</span><span class="p">);</span>
+<span class="w">  </span><span class="kt">unsigned</span><span class="w"> </span><span class="n">sum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">size_t</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">count</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">sum</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">sum</span><span class="p">;</span>
+<span class="p">}</span>
 </pre></div>
 </div>
- </p>
+</p>
 </dd></dl>
 
 <dl class="cpp macro">
 <dt class="sig sig-object cpp" id="c.ASAP_UNREACHABLE">
 <span class="target" id="compilers_8h_1a80409da3f1159c633eb6b08ad7c5513a"></span><span class="sig-name descname"><span class="n"><span class="pre">ASAP_UNREACHABLE</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#c.ASAP_UNREACHABLE" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Inform the compiler/analyzer that the code should never be reached (even with invalid input). </p>
-<p>Example <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">switch</span><span class="w"> </span><span class="p">(</span><span class="n">foo</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">  </span><span class="k">case</span><span class="w"> </span><span class="no">BAR</span><span class="p">:</span><span class="w"></span>
-<span class="w">    </span><span class="n">do_something</span><span class="p">();</span><span class="w"></span>
-<span class="w">    </span><span class="k">break</span><span class="p">;</span><span class="w"></span>
-<span class="w">  </span><span class="k">case</span><span class="w"> </span><span class="no">BAZ</span><span class="p">:</span><span class="w"></span>
-<span class="w">    </span><span class="n">do_something_else</span><span class="p">();</span><span class="w"></span>
-<span class="w">    </span><span class="k">break</span><span class="p">;</span><span class="w"></span>
-<span class="w">  </span><span class="k">default</span><span class="o">:</span><span class="w"></span>
-<span class="w">    </span><span class="n">ASAP_UNREACHABLE</span><span class="p">();</span><span class="w"></span>
-<span class="w">    </span><span class="k">break</span><span class="p">;</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<p>Example <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">switch</span><span class="w"> </span><span class="p">(</span><span class="n">foo</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">case</span><span class="w"> </span><span class="no">BAR</span><span class="p">:</span>
+<span class="w">    </span><span class="n">do_something</span><span class="p">();</span>
+<span class="w">    </span><span class="k">break</span><span class="p">;</span>
+<span class="w">  </span><span class="k">case</span><span class="w"> </span><span class="no">BAZ</span><span class="p">:</span>
+<span class="w">    </span><span class="n">do_something_else</span><span class="p">();</span>
+<span class="w">    </span><span class="k">break</span><span class="p">;</span>
+<span class="w">  </span><span class="k">default</span><span class="o">:</span>
+<span class="w">    </span><span class="n">ASAP_UNREACHABLE</span><span class="p">();</span>
+<span class="w">    </span><span class="k">break</span><span class="p">;</span>
+<span class="p">}</span>
 </pre></div>
 </div>
-</p>
-<p><div class="admonition seealso">
+ <div class="admonition seealso">
 <p class="admonition-title">See also</p>
-<p><a class="reference internal" href="#compilers_8h_1a4756d3814719a7423451fddb80d9d5ad"><span class="std std-ref">ASAP_UNREACHABLE_RETURN</span></a> </p>
+<p><a class="reference internal" href="#compilers_8h_1a4756d3814719a7423451fddb80d9d5ad"><span class="std std-ref">ASAP_UNREACHABLE_RETURN</span></a></p>
 </div>
 </p>
 </dd></dl>
@@ -832,22 +771,21 @@ Additionally, some non-clang-based compilers support a subset of the macros.</p>
 <dt class="sig sig-object cpp" id="c.ASAP_UNREACHABLE_RETURN">
 <span class="target" id="compilers_8h_1a4756d3814719a7423451fddb80d9d5ad"></span><span class="sig-name descname"><span class="n"><span class="pre">ASAP_UNREACHABLE_RETURN</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">value</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.ASAP_UNREACHABLE_RETURN" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Inform the compiler/analyzer that the code should never be reached or, for compilers which don’t provide a way to provide such information, return a value. </p>
-<p>Example <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">handle_code</span><span class="p">(</span><span class="k">enum</span><span class="w"> </span><span class="nc">Foo</span><span class="w"> </span><span class="n">code</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">  </span><span class="k">switch</span><span class="w"> </span><span class="p">(</span><span class="n">code</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">  </span><span class="k">case</span><span class="w"> </span><span class="no">FOO_BAR</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="k">case</span><span class="w"> </span><span class="no">FOO_BAZ</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="k">case</span><span class="w"> </span><span class="no">FOO_QUX</span><span class="p">:</span><span class="w"></span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
-<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<p>Example <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">handle_code</span><span class="p">(</span><span class="k">enum</span><span class="w"> </span><span class="nc">Foo</span><span class="w"> </span><span class="n">code</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">switch</span><span class="w"> </span><span class="p">(</span><span class="n">code</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">case</span><span class="w"> </span><span class="no">FOO_BAR</span><span class="p">:</span>
+<span class="w">  </span><span class="k">case</span><span class="w"> </span><span class="no">FOO_BAZ</span><span class="p">:</span>
+<span class="w">  </span><span class="k">case</span><span class="w"> </span><span class="no">FOO_QUX</span><span class="p">:</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
 
-<span class="n">ASAP_UNREACHABLE_RETURN</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<span class="n">ASAP_UNREACHABLE_RETURN</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+<span class="p">}</span>
 </pre></div>
 </div>
-</p>
-<p><div class="admonition seealso">
+ <div class="admonition seealso">
 <p class="admonition-title">See also</p>
-<p><a class="reference internal" href="#compilers_8h_1a80409da3f1159c633eb6b08ad7c5513a"><span class="std std-ref">ASAP_UNREACHABLE</span></a> </p>
+<p><a class="reference internal" href="#compilers_8h_1a80409da3f1159c633eb6b08ad7c5513a"><span class="std std-ref">ASAP_UNREACHABLE</span></a></p>
 </div>
 </p>
 </dd></dl>
@@ -856,48 +794,110 @@ Additionally, some non-clang-based compilers support a subset of the macros.</p>
 </section>
 
 
-              </div>
+                </article>
               
-            </main>
-            <footer class="footer-article noprint">
-                
-    <!-- Previous / next buttons -->
-<div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="platform.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Platform and environment preprocessor symbols</p>
-        </div>
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="platform.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Platform and environment preprocessor symbols</p>
+      </div>
     </a>
-    <a class='right-next' id="next-link" href="meta.html" title="next page">
-    <div class="prev-next-info">
+    <a class="right-next"
+       href="meta.html"
+       title="next page">
+      <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
         <p class="prev-next-title">Project meta properties</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
-</div>
-            </footer>
-        </div>
-    </div>
-    <div class="footer-content row">
-        <footer class="col footer"><p>
-  
-      &copy; Copyright 2022, The Authors.<br/>
-</p>
-        </footer>
-    </div>
-    
-</div>
-
-
       </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#identification">Identification</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#version-checking">Version checking</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#feature-testing">Feature testing</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#attributes">Attributes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#builtin-functions">Builtin functions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#features">Features</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#diagnostics">Diagnostics</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optimization-hints">Optimization hints</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022, The Authors.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
     </div>
+  </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
 
-
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>
