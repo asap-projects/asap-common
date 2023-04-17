@@ -48,14 +48,21 @@ extensions = [
     'sphinx.ext.viewcode',
     'sphinx-prompt',
     'sphinx_copybutton',
-    'myst_parser'
+    'myst_parser',
+    'breathe',
 ]
+
+# Setup the breathe extension
+breathe_projects = {
+    "asap_common": "@DOXYGEN_BUILD_DIR@/asap_common/xml"
+}
+breathe_default_project = "asap_common"
 
 # Tell sphinx what the primary language being documented is.
 primary_domain = 'cpp'
 
 # Tell sphinx what the pygments highlight language should be.
-highlight_language = 'cpp'
+highlight_language = 'none'
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -121,12 +128,6 @@ html_theme_options = {
 # -- Extension configuration -------------------------------------------------
 
 # -- Options for intersphinx extension ---------------------------------------
-
-intersphinx_mapping = {
-    'common': (
-        'https://asap-projects.github.io/asap-common/asap_common/html',
-        '@SPHINX_BUILD_DIR@/asap_common/html/objects.inv')
-}
 
 # -- Options for todo extension ----------------------------------------------
 
