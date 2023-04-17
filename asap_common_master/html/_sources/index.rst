@@ -19,6 +19,7 @@ Last Updated on |date|
    :titlesonly:
    :hidden:
 
+   common/index
    tools/index
    license
    changelog.md
@@ -27,22 +28,21 @@ Last Updated on |date|
 Welcome! This is the documentation for the
 `asap-common <https://github.com/asap-projects/asap-common>`_ |version| project.
 
-This is a build container for the :doc:`common <common:index>` module. It uses
-the `asap <https://github.com/abdes/asap>`_ integrated build system and follows
-its development workflow.
+This project uses the `asap <https://github.com/abdes/asap>`_ integrated build
+system and follows its documentation framework and development workflow.
 
 Parts of the documentation
 ==========================
 
-:doc:`common <common:api>`
---------------------------
-  *start here to understand the classes provided by the library and how to use
-  them to build your own state machine.*
+:doc:`Module: common <common/index>`
+------------------------------------
+*start here to understand the module design, its public APIs and see examples of
+how to use them.*
 
 `Developer Guides <https://abdes.github.io/asap/asap_master/html/project-development/index.html>`_
 --------------------------------------------------------------------------------------------------
-  *head over to the `asap` project documentation for detailed guides on how to
-  build and maintain the different targets in this project.*
+*head over to the `asap` project documentation for detailed guides on how to
+build and maintain the different targets in this project.*
 
 :doc:`Project Tools <tools/index>`
 ----------------------------------
