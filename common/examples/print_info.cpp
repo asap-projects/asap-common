@@ -6,13 +6,13 @@
 
 #include <string>
 
-#include <common/compilers.h>
-#include <common/platform.h>
-#include <common/version.h>
+#include <asap/common/compilers.h>
+#include <asap/common/platform.h>
+#include "asap_common/version.h"
 
 namespace {
 auto VersionInfo() -> std::string {
-  return ASAP_NAME_VERSION;
+  return asap::common::info::cNameVersion;
 }
 
 auto PlatformInfo() -> std::string {

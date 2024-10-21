@@ -4,7 +4,7 @@
 # SPDX-License-Identifier: BSD-3-Clause
 # ===-----------------------------------------------------------------------===#
 
-set(my_name "common")
+set(my_name "asap.common")
 asap_push_module("${my_name}")
 
 # ------------------------------------------------------------------------------
@@ -28,16 +28,6 @@ asap_declare_module(
   "0"
 )
 
-# ------------------------------------------------------------------------------
-# Code generation
-# ------------------------------------------------------------------------------
-
-# Generate version header
-configure_file(
-  ${CMAKE_CURRENT_SOURCE_DIR}/include/${META_MODULE_NAME}/version.h.in
-  ${CMAKE_CURRENT_BINARY_DIR}/include/${META_MODULE_NAME}/version.h
-)
-
 # ==============================================================================
 # Build instructions
 # ==============================================================================
@@ -46,7 +36,7 @@ configure_file(
 # Main module target
 # ------------------------------------------------------------------------------
 
-set(MODULE_TARGET_NAME "asap_common")
+set(MODULE_TARGET_NAME "${my_name}")
 
 asap_add_library(${MODULE_TARGET_NAME} INTERFACE WARNING)
 
@@ -103,22 +93,31 @@ if(${META_PROJECT_ID}_INSTALL)
 
   # Library
   install(
-    TARGETS ${MODULE_TARGET_NAME}
+    TARGETS
+      ${MODULE_TARGET_NAME}
     EXPORT "${TARGETS_EXPORT_NAME}"
     COMPONENT
     dev
-    RUNTIME DESTINATION ${ASAP_INSTALL_BIN} COMPONENT ${runtime}
-    LIBRARY DESTINATION ${ASAP_INSTALL_SHARED} COMPONENT ${runtime}
-    ARCHIVE DESTINATION ${ASAP_INSTALL_LIB} COMPONENT ${dev}
+    RUNTIME
+      DESTINATION ${ASAP_INSTALL_BIN}
+      COMPONENT ${runtime}
+    LIBRARY
+      DESTINATION ${ASAP_INSTALL_SHARED}
+      COMPONENT ${runtime}
+    ARCHIVE
+      DESTINATION ${ASAP_INSTALL_LIB}
+      COMPONENT ${dev}
   )
 
   # Header files
   install(
-    DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/include/${META_MODULE_NAME}
+    DIRECTORY
+      ${CMAKE_CURRENT_SOURCE_DIR}/include/${META_MODULE_NAME}
     DESTINATION ${ASAP_INSTALL_INCLUDE}
     COMPONENT ${dev}
     FILES_MATCHING
-    PATTERN "*.h"
+    PATTERN
+    "*.h"
   )
 
   # Generated header files
@@ -143,7 +142,8 @@ if(${META_PROJECT_ID}_INSTALL)
   # Docs
   if(EXISTS ${SPHINX_BUILD_DIR}/${MODULE_TARGET_NAME})
     install(
-      DIRECTORY ${SPHINX_BUILD_DIR}/${MODULE_TARGET_NAME}
+      DIRECTORY
+        ${SPHINX_BUILD_DIR}/${MODULE_TARGET_NAME}
       DESTINATION ${ASAP_INSTALL_DOC}
       COMPONENT ${MODULE_TARGET_NAME}_docs
     )
