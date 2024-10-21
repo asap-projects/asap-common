@@ -1,6 +1,6 @@
 # ===-----------------------------------------------------------------------===#
 # Distributed under the 3-Clause BSD License. See accompanying file LICENSE or
-# copy at https://opensource.org/licenses/BSD-3-Clause).
+# copy at https://opensource.org/licenses/BSD-3-Clause.
 # SPDX-License-Identifier: BSD-3-Clause
 # ===-----------------------------------------------------------------------===#
 
@@ -25,7 +25,8 @@ asap_declare_module(
   VERSION_MINOR
   "0"
   VERSION_PATCH
-  "0")
+  "0"
+)
 
 # ------------------------------------------------------------------------------
 # Code generation
@@ -34,7 +35,8 @@ asap_declare_module(
 # Generate version header
 configure_file(
   ${CMAKE_CURRENT_SOURCE_DIR}/include/${META_MODULE_NAME}/version.h.in
-  ${CMAKE_CURRENT_BINARY_DIR}/include/${META_MODULE_NAME}/version.h)
+  ${CMAKE_CURRENT_BINARY_DIR}/include/${META_MODULE_NAME}/version.h
+)
 
 # ==============================================================================
 # Build instructions
@@ -50,9 +52,11 @@ asap_add_library(${MODULE_TARGET_NAME} INTERFACE WARNING)
 
 target_include_directories(
   ${MODULE_TARGET_NAME}
-  INTERFACE $<INSTALL_INTERFACE:include>
-            $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
-            $<BUILD_INTERFACE:${CMAKE_CURRENT_BINARY_DIR}/include>)
+  INTERFACE
+    $<INSTALL_INTERFACE:include>
+    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+    $<BUILD_INTERFACE:${CMAKE_CURRENT_BINARY_DIR}/include>
+)
 
 # common comes directly from asap and is usually kept as is. It is more
 # convenient to simply use it as asap::common
@@ -73,17 +77,20 @@ endif()
 # API Documentation
 # ------------------------------------------------------------------------------
 
-asap_with_doxygen(
-  MODULE_NAME
-  ${MODULE_TARGET_NAME}
-  VERSION
-  ${META_MODULE_VERSION}
-  TITLE
-  "\"Common Module\""
-  BRIEF
-  "\"Provides common basic building blocks such as portability, assertions, etc.\""
-  INPUT_PATH
-  "${CMAKE_CURRENT_SOURCE_DIR}/src ${CMAKE_CURRENT_SOURCE_DIR}/include")
+if(ASAP_WITH_DOXYGEN)
+  asap_with_doxygen(
+    MODULE_NAME
+    ${MODULE_TARGET_NAME}
+    VERSION
+    ${META_MODULE_VERSION}
+    TITLE
+    "\"Common Module\""
+    BRIEF
+    "\"Provides common basic building blocks such as portability, assertions, etc.\""
+    INPUT_PATH
+    "${CMAKE_CURRENT_SOURCE_DIR}/src ${CMAKE_CURRENT_SOURCE_DIR}/include"
+  )
+endif()
 
 # ==============================================================================
 # Deployment instructions
@@ -98,10 +105,12 @@ if(${META_PROJECT_ID}_INSTALL)
   install(
     TARGETS ${MODULE_TARGET_NAME}
     EXPORT "${TARGETS_EXPORT_NAME}"
-    COMPONENT dev
+    COMPONENT
+    dev
     RUNTIME DESTINATION ${ASAP_INSTALL_BIN} COMPONENT ${runtime}
     LIBRARY DESTINATION ${ASAP_INSTALL_SHARED} COMPONENT ${runtime}
-    ARCHIVE DESTINATION ${ASAP_INSTALL_LIB} COMPONENT ${dev})
+    ARCHIVE DESTINATION ${ASAP_INSTALL_LIB} COMPONENT ${dev}
+  )
 
   # Header files
   install(
@@ -109,33 +118,35 @@ if(${META_PROJECT_ID}_INSTALL)
     DESTINATION ${ASAP_INSTALL_INCLUDE}
     COMPONENT ${dev}
     FILES_MATCHING
-    PATTERN "*.h")
+    PATTERN "*.h"
+  )
 
   # Generated header files
-  install(
-    DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/include/${META_MODULE_NAME}
-    DESTINATION ${ASAP_INSTALL_INCLUDE}
-    COMPONENT ${dev})
+  install(DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/include/${META_MODULE_NAME} DESTINATION ${ASAP_INSTALL_INCLUDE} COMPONENT ${dev})
 
   # Target config
   install(
     EXPORT ${TARGETS_EXPORT_NAME}
     NAMESPACE ${META_PROJECT_NAME}::
     DESTINATION ${ASAP_INSTALL_CMAKE}/${META_MODULE_NAME}
-    COMPONENT ${dev})
+    COMPONENT ${dev}
+  )
 
   # Package configuration files
   install(
-    FILES ${CMAKE_CURRENT_BINARY_DIR}/${MODULE_TARGET_NAME}Config.cmake
-          ${CMAKE_CURRENT_BINARY_DIR}/${MODULE_TARGET_NAME}ConfigVersion.cmake
-    DESTINATION ${ASAP_INSTALL_CMAKE}/${META_MODULE_NAME})
+    FILES
+      ${CMAKE_CURRENT_BINARY_DIR}/${MODULE_TARGET_NAME}Config.cmake
+      ${CMAKE_CURRENT_BINARY_DIR}/${MODULE_TARGET_NAME}ConfigVersion.cmake
+    DESTINATION ${ASAP_INSTALL_CMAKE}/${META_MODULE_NAME}
+  )
 
   # Docs
   if(EXISTS ${SPHINX_BUILD_DIR}/${MODULE_TARGET_NAME})
     install(
       DIRECTORY ${SPHINX_BUILD_DIR}/${MODULE_TARGET_NAME}
       DESTINATION ${ASAP_INSTALL_DOC}
-      COMPONENT ${MODULE_TARGET_NAME}_docs)
+      COMPONENT ${MODULE_TARGET_NAME}_docs
+    )
   endif()
 endif()
 

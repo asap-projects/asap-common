@@ -1,6 +1,6 @@
 # ===-----------------------------------------------------------------------===#
 # Distributed under the 3-Clause BSD License. See accompanying file LICENSE or
-# copy at https://opensource.org/licenses/BSD-3-Clause).
+# copy at https://opensource.org/licenses/BSD-3-Clause.
 # SPDX-License-Identifier: BSD-3-Clause
 # ===-----------------------------------------------------------------------===#
 
@@ -18,6 +18,5 @@ function(asap_generate_export_headers target include_dir)
   set(TEMPLATE_INCLUDE_DIR "${include_dir}")
 
   # Create API export headers
-  generate_export_header(${target} EXPORT_FILE_NAME ${export_file}
-                         EXPORT_MACRO_NAME ${TEMPLATE_TARGET_ID}_API)
+  generate_export_header(${target} EXPORT_FILE_NAME ${export_file} EXPORT_MACRO_NAME ${TEMPLATE_TARGET_ID}_API)
 endfunction()

@@ -10,7 +10,7 @@ All notable changes to this project will be documented in this file. See [standa
 
 ### Features
 
-* add ccache support to dev container
+- add ccache support to dev container
   ([202c27a](http://github.com/abdes/asap/commit/202c27a628f7f35ae17f2df91c1d95f67360abea))
 * make ccache usable on all platforms
   ([412730f](http://github.com/abdes/asap/commit/412730f86679d7ccd350cadf5649b7a489376cae))
@@ -53,29 +53,29 @@ All notable changes to this project will be documented in this file. See [standa
 
 ### Documentation
 
-* add badge for OpenSSF best practices
+- add badge for OpenSSF best practices
   ([26c01c8](http://github.com/abdes/asap/commit/26c01c8bcf98c6b47e6622dea91a6c6e10bc978c))
-* add CPM as preferred way of managing third party deps
+- add CPM as preferred way of managing third party deps
   ([5a33f70](http://github.com/abdes/asap/commit/5a33f70a15a64c84f0a13b4286460f9df20459a5))
 * add last-updated-on timestamp
   ([d3e5ec3](http://github.com/abdes/asap/commit/d3e5ec39d7be787b77a38c9db6ae4f6f966d0589))
 * add tutorial videos
   ([cb13248](http://github.com/abdes/asap/commit/cb13248244cddd0dc2c187893556fad7aa4f08b7))
-* fix thumbnail and links of project docs video
+- fix thumbnail and links of project docs video
   ([1a6269e](http://github.com/abdes/asap/commit/1a6269eef8999504aba8105d4c446a93e41c988b))
-* how to report security vulnerabilities
+- how to report security vulnerabilities
   ([46426e9](http://github.com/abdes/asap/commit/46426e9d44f3c4e8ee0b3fdd98e2ee56d13f8890))
-* improve the key features section
+- improve the key features section
   ([79119ba](http://github.com/abdes/asap/commit/79119ba52f578a28dfdeb1ce59bba67c3fbcd3c1))
-* include build status badges for all branches
+- include build status badges for all branches
   ([2b98ae1](http://github.com/abdes/asap/commit/2b98ae11ace8fa756c825686018a3a328ce27eca))
-* revamp the project README
+- revamp the project README
   ([e72c4c3](http://github.com/abdes/asap/commit/e72c4c3288d565b34b137ab785abe90370052258))
-* rewrite the contributing section
+- rewrite the contributing section
   ([c7e39c4](http://github.com/abdes/asap/commit/c7e39c4cfa6033aac42befe5ed994089e601b6a0))
-* update instructions for repo from template scenario
+- update instructions for repo from template scenario
   ([1cafdb5](http://github.com/abdes/asap/commit/1cafdb57f86a4b61a736b3411791ae96ca684f33))
-* update project docs video
+- update project docs video
   ([c7f79fc](http://github.com/abdes/asap/commit/c7f79fc64900cfa9ec3d2466300d1d32830b32f1))
 
 ## [2.0.4](http://github.com/abdes/asap/compare/v2.0.3...v2.0.4) (2022-03-15)
@@ -154,9 +154,9 @@ the old `asap` projects.
   still be easily added and used to an `asap` based project.
 * `hedley` was removed from `common` and was replaced by a much lighter new file
   `compilers.h`.
-* `nowide` was removed from `common` and will be replaced by the standalone
+- `nowide` was removed from `common` and will be replaced by the standalone
   boost nowide library when needed.
-* `filesystem` footprint is too large to be included by default in `asap`
+- `filesystem` footprint is too large to be included by default in `asap`
   starter project. It will be provided separately and a mechanism to easily add
   it into an `asap` based project will be implemented in a future update.
 * logging is in a new module: asap::logging.
@@ -166,7 +166,7 @@ pulling extra 3rd party dependencies such as spdlog, fmt etc... For this reason,
 the logging functionality is taken out of the common submodule and moved to
 logging submodule.
 
-* logging is in a new module: asap::logging.
+- logging is in a new module: asap::logging.
 
 Many modules would want to only get the basic common functionality without
 pulling extra 3rd party dependencies such as spdlog, fmt etc... For this reason,
