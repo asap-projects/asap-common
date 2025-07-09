@@ -41,21 +41,33 @@ if(NOT GIT_SHA1)
   set(GIT_REV "0")
 endif()
 
+# Read version from version.txt
+file(READ "${CMAKE_SOURCE_DIR}/version.txt" VERSION_TXT_CONTENTS)
+string(REGEX MATCH "([0-9]+)\\.([0-9]+)\\.([0-9]+)" VERSION_MATCH "${VERSION_TXT_CONTENTS}")
+
 # Meta information about the project
 # cmake-format: off
-set(META_PROJECT_NAME "asap-common")
+# gersemi: off
+set(META_PROJECT_NAME        "asap-common")
 set(META_PROJECT_DESCRIPTION "ASAP Common module.")
 set(META_AUTHOR_ORGANIZATION "The Authors")
-set(META_GITHUB_REPO "https://github.com/asap-projects/asap-common")
-set(META_AUTHOR_DOMAIN "https://github.com/asap-projects")
-set(META_AUTHOR_MAINTAINER "Abdessattar Sassi")
-set(META_VERSION_MAJOR "2")
-set(META_VERSION_MINOR "0")
-set(META_VERSION_PATCH "6")
-set(META_VERSION_REVISION "${GIT_REV}")
-set(META_VERSION "${META_VERSION_MAJOR}.${META_VERSION_MINOR}.${META_VERSION_PATCH}")
-set(META_NAME_VERSION "${META_PROJECT_NAME} v${META_VERSION} (${META_VERSION_REVISION})")
+set(META_GITHUB_REPO         "https://github.com/asap-projects/asap-common")
+set(META_AUTHOR_DOMAIN       "https://github.com/asap-projects")
+set(META_AUTHOR_MAINTAINER   "Abdessattar Sassi")
+string(REGEX REPLACE "([0-9]+)\\.([0-9]+)\\.([0-9]+)" "\\1" META_VERSION_MAJOR "${VERSION_MATCH}")
+string(REGEX REPLACE "([0-9]+)\\.([0-9]+)\\.([0-9]+)" "\\2" META_VERSION_MINOR "${VERSION_MATCH}")
+string(REGEX REPLACE "([0-9]+)\\.([0-9]+)\\.([0-9]+)" "\\3" META_VERSION_PATCH "${VERSION_MATCH}")
+set(META_VERSION_REVISION    "${GIT_REV}")
+set(META_VERSION             "${META_VERSION_MAJOR}.${META_VERSION_MINOR}.${META_VERSION_PATCH}")
+set(META_NAME_VERSION        "${META_PROJECT_NAME} v${META_VERSION} (${META_VERSION_REVISION})")
+# gersemi: on
 # cmake-format: on
+
+message(STATUS "PROJECT VERSION:")
+message(STATUS ". Major: ${META_VERSION_MAJOR}")
+message(STATUS ". Minor: ${META_VERSION_MINOR}")
+message(STATUS ". Patch: ${META_VERSION_PATCH}")
+message(STATUS ". Revision: ${META_VERSION_REVISION}")
 
 string(MAKE_C_IDENTIFIER ${META_PROJECT_NAME} META_PROJECT_ID)
 string(TOUPPER ${META_PROJECT_ID} META_PROJECT_ID)
