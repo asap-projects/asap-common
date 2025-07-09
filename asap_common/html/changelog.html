@@ -28,8 +28,8 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
@@ -37,8 +37,8 @@
 <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="_static/documentation_options.js?v=ccf93202"></script>
-    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/documentation_options.js?v=2ff87af2"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="_static/copybutton.js?v=f281be69"></script>
@@ -422,8 +422,6 @@ document.write(`
 <ul class="simple">
 <li><p>add ccache support to dev container
 (<a class="reference external" href="http://github.com/abdes/asap/commit/202c27a628f7f35ae17f2df91c1d95f67360abea">202c27a</a>)</p></li>
-</ul>
-<ul class="simple">
 <li><p>make ccache usable on all platforms
 (<a class="reference external" href="http://github.com/abdes/asap/commit/412730f86679d7ccd350cadf5649b7a489376cae">412730f</a>)</p></li>
 </ul>
@@ -473,8 +471,6 @@ closes <a class="reference external" href="http://github.com/abdes/asap/issues/4
 (<a class="reference external" href="http://github.com/abdes/asap/commit/26c01c8bcf98c6b47e6622dea91a6c6e10bc978c">26c01c8</a>)</p></li>
 <li><p>add CPM as preferred way of managing third party deps
 (<a class="reference external" href="http://github.com/abdes/asap/commit/5a33f70a15a64c84f0a13b4286460f9df20459a5">5a33f70</a>)</p></li>
-</ul>
-<ul class="simple">
 <li><p>add last-updated-on timestamp
 (<a class="reference external" href="http://github.com/abdes/asap/commit/d3e5ec39d7be787b77a38c9db6ae4f6f966d0589">d3e5ec3</a>)</p></li>
 <li><p>add tutorial videos
@@ -483,6 +479,8 @@ closes <a class="reference external" href="http://github.com/abdes/asap/issues/4
 <ul class="simple">
 <li><p>fix thumbnail and links of project docs video
 (<a class="reference external" href="http://github.com/abdes/asap/commit/1a6269eef8999504aba8105d4c446a93e41c988b">1a6269e</a>)</p></li>
+</ul>
+<ul class="simple">
 <li><p>how to report security vulnerabilities
 (<a class="reference external" href="http://github.com/abdes/asap/commit/46426e9d44f3c4e8ee0b3fdd98e2ee56d13f8890">46426e9</a>)</p></li>
 <li><p>improve the key features section
@@ -590,11 +588,11 @@ still be easily added and used to an <code class="docutils literal notranslate">
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">nowide</span></code> was removed from <code class="docutils literal notranslate"><span class="pre">common</span></code> and will be replaced by the standalone
 boost nowide library when needed.</p></li>
+</ul>
+<ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">filesystem</span></code> footprint is too large to be included by default in <code class="docutils literal notranslate"><span class="pre">asap</span></code>
 starter project. It will be provided separately and a mechanism to easily add
 it into an <code class="docutils literal notranslate"><span class="pre">asap</span></code> based project will be implemented in a future update.</p></li>
-</ul>
-<ul class="simple">
 <li><p>logging is in a new module: asap::logging.</p></li>
 </ul>
 <p>Many modules would want to only get the basic common functionality without
