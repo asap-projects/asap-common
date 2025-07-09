@@ -62,7 +62,7 @@ jobs:
       - name: Configure build
         working-directory: ${{runner.workspace}}
         run: |
-          mkdir build `
+          mkdir build
           cmake -B build -S asap-common `
             -D CMAKE_BUILD_TYPE=${{matrix.build_type}} `
             -G "${{ matrix.generator }}" `
