@@ -37,7 +37,7 @@
 <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="_static/documentation_options.js?v=266c9589"></script>
+    <script src="_static/documentation_options.js?v=07418719"></script>
     <script src="_static/doctools.js?v=9bcbadda"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/clipboard.min.js?v=a7894cd8"></script>
@@ -369,30 +369,35 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">2.0.6 (2022-08-20)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">2.0.5 (2022-08-20)</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">2.1.0 (2025-07-09)</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#features">Features</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bug-fixes">Bug Fixes</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">2.0.6 (2022-08-20)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">2.0.5 (2022-08-20)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Features</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Bug Fixes</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#documentation">Documentation</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">2.0.4 (2022-03-15)</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Bug Fixes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">2.0.4 (2022-03-15)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">Bug Fixes</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">2.0.3 (2022-03-07)</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Bug Fixes</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">2.0.2 (2022-03-06)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">2.0.1 (2022-03-06)</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">2.0.3 (2022-03-07)</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">Bug Fixes</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">2.0.0 (2022-03-06)</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#breaking-changes">⚠ BREAKING CHANGES</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">Features</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">2.0.2 (2022-03-06)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">2.0.1 (2022-03-06)</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">Bug Fixes</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">2.0.0 (2022-03-06)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#breaking-changes">⚠ BREAKING CHANGES</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">Features</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">Bug Fixes</a></li>
 </ul>
 </li>
 </ul>
@@ -410,15 +415,94 @@ document.write(`
 <h1>Changelog<a class="headerlink" href="#changelog" title="Link to this heading">#</a></h1>
 <p>All notable changes to this project will be documented in this file. See <a class="reference external" href="https://github.com/conventional-changelog/standard-version">standard-version</a> for commit guidelines.</p>
 <section id="id1">
-<h2><a class="reference external" href="http://github.com/abdes/asap/compare/v2.0.5...v2.0.6">2.0.6</a> (2022-08-20)<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<h2><a class="reference external" href="https://github.com/asap-projects/asap-common/compare/v2.0.6...v2.1.0">2.1.0</a> (2025-07-09)<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<section id="features">
+<h3>Features<a class="headerlink" href="#features" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>add build option to enable or disable docs targets (<a class="reference external" href="https://github.com/asap-projects/asap-common/commit/481c24087a23ad551e3ccccd260fa4896c963c2c">481c240</a>)</p></li>
+<li><p>add GitHub Actions workflow for release-please automation (<a class="reference external" href="https://github.com/asap-projects/asap-common/commit/69d96dad7cc56570067f825b420e1dabc4270693">69d96da</a>)</p></li>
+<li><p>add the <code class="docutils literal notranslate"><span class="pre">version-info</span></code> tool to print the project info (<a class="reference external" href="https://github.com/asap-projects/asap-common/commit/cb228e8af73fbf063371e4c597f757bf5e9a4b75">cb228e8</a>)</p></li>
+<li><p>comprehensive macos builds for CI (<a class="reference external" href="https://github.com/asap-projects/asap-common/commit/084ae866e16a7999c8612599610c385e0e555321">084ae86</a>)</p></li>
+<li><p>comprehensive ubuntu builds for CI (<a class="reference external" href="https://github.com/asap-projects/asap-common/commit/27fce464c0664d160a519908898cc71d6ba95980">27fce46</a>)</p></li>
+<li><p>comprehensive windows builds for CI (<a class="reference external" href="https://github.com/asap-projects/asap-common/commit/e46196f7daf138c2fd33248fbc0593367149480b">e46196f</a>)</p></li>
+<li><p>custom index.html should be optional in project doc root (<a class="reference external" href="https://github.com/asap-projects/asap-common/commit/9f906fd88181bcb75132fc4a6f8127538a58f22a">9f906fd</a>)</p></li>
+<li><p>customize release-please workflow (<a class="reference external" href="https://github.com/asap-projects/asap-common/commit/b3504fbfc033deebc8d7fc578e3e7c160d42b927">b3504fb</a>)</p></li>
+<li><p>customize release-please workflow to update versions (<a class="reference external" href="https://github.com/asap-projects/asap-common/commit/c4921d64bcc979b45f58933813155c1d38ec9bbb">c4921d6</a>)</p></li>
+<li><p>enhance configure logs with project/module nesting hierarchy (<a class="reference external" href="https://github.com/asap-projects/asap-common/commit/f6c13f2a08c89cac57fb2f0dd857c8f382e50e7b">f6c13f2</a>)</p></li>
+<li><p>implement robust project-wide formatting (<a class="reference external" href="https://github.com/asap-projects/asap-common/commit/afcaebe544fc03684ae2f85d8507b1f4571d989b">afcaebe</a>)</p></li>
+<li><p>increase ccache hit rate (<a class="reference external" href="https://github.com/asap-projects/asap-common/commit/a22a91226060851fe9fc7e5bc0e51973df94d95c">a22a912</a>)</p></li>
+<li><p>more robust handling of contract checking mode (<a class="reference external" href="https://github.com/asap-projects/asap-common/commit/304e9aee1e8fb265be78163578c45ae22569e52b">304e9ae</a>)</p></li>
+<li><p>option to control the use of ccache, default is OFF (<a class="reference external" href="https://github.com/asap-projects/asap-common/commit/49a17a99026ae7e59d14297d01ed2f8d10c78762">49a17a9</a>)</p></li>
+<li><p>support for qualified module names (<a class="reference external" href="https://github.com/asap-projects/asap-common/commit/0c01c1222b0bf5877811ff19f2626163f7cc9e40">0c01c12</a>)</p></li>
+<li><p>upgrade CPM to 0.38.1 (<a class="reference external" href="https://github.com/asap-projects/asap-common/commit/b333b3858c204fa2151171f0ac494853089ffa37">b333b38</a>)</p></li>
+<li><p>use pre-commit instead of husky (<a class="reference external" href="https://github.com/asap-projects/asap-common/commit/551e1a16e3c106d0e48629932fc5121de86f83ec">551e1a1</a>)</p></li>
+</ul>
+</section>
+<section id="bug-fixes">
+<h3>Bug Fixes<a class="headerlink" href="#bug-fixes" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/asap-projects/asap-common/issues/13">#13</a> move “caexcludepath” to dev-windows and exclude CPM cache (<a class="reference external" href="https://github.com/asap-projects/asap-common/commit/0571714e9436bfec26d6450b5bc37f2a5f478a55">0571714</a>)</p></li>
+<li><p><a class="reference external" href="https://github.com/asap-projects/asap-common/issues/14">#14</a> upgrade CPM to 0.35.6 (<a class="reference external" href="https://github.com/asap-projects/asap-common/commit/695414b8e66d4d42d7ef3aaef3c6a4b8399d16c2">695414b</a>)</p></li>
+<li><p><a class="reference external" href="https://github.com/asap-projects/asap-common/issues/16">#16</a> use CMAKE_CURRENT_SOURCE_DIR instead of CMAKE_SOURCE_DIR for cmake includes (<a class="reference external" href="https://github.com/asap-projects/asap-common/commit/4ac6928fc2a0bf806bbcaa3bea898b5ff018a164">4ac6928</a>)</p></li>
+<li><p><a class="reference external" href="https://github.com/asap-projects/asap-common/issues/17">#17</a> git should not be required (<a class="reference external" href="https://github.com/asap-projects/asap-common/commit/2c761046d0801f643aa0215d34f2795ff0093dfc">2c76104</a>)</p></li>
+<li><p><a class="reference external" href="https://github.com/asap-projects/asap-common/issues/18">#18</a> enforce end of line to LF (<a class="reference external" href="https://github.com/asap-projects/asap-common/commit/943ae479e09de999c324a9cfe3bbf8d688d255a3">943ae47</a>)</p></li>
+<li><p><a class="reference external" href="https://github.com/asap-projects/asap-common/issues/19">#19</a> use generator expressions instead of CMAKE_BUILD_TYPE (<a class="reference external" href="https://github.com/asap-projects/asap-common/commit/857d2997d4ec6c879036e10234b8baf907e91089">857d299</a>)</p></li>
+<li><p><a class="reference external" href="https://github.com/asap-projects/asap-common/issues/20">#20</a> local install should use CMAKE_INSTALL_PREFIX to set variables (<a class="reference external" href="https://github.com/asap-projects/asap-common/commit/2e1f1d49baff64dbf47dbbda234886ad2dfdbf1c">2e1f1d4</a>)</p></li>
+<li><p><a class="reference external" href="https://github.com/asap-projects/asap-common/issues/20">#20</a> use CMAKE_INSTALL_PREFIX to set variables (<a class="reference external" href="https://github.com/asap-projects/asap-common/commit/2fffd96392114993bbb72e3f614725f867d61ab1">2fffd96</a>)</p></li>
+<li><p>15 get target type before testing it (<a class="reference external" href="https://github.com/asap-projects/asap-common/commit/b8bd378f52bc131b84c13b08cfe70d649e9d9be0">b8bd378</a>)</p></li>
+<li><p>adapt versioning for release-please simple strategy (<a class="reference external" href="https://github.com/asap-projects/asap-common/commit/06014b5387adaf1536582f17096f39a05c149829">06014b5</a>)</p></li>
+<li><p>add .python-version to .gitignore (<a class="reference external" href="https://github.com/asap-projects/asap-common/commit/9c8957c833e6553daa1f6e8c8584b318fc78aef9">9c8957c</a>)</p></li>
+<li><p>add ‘Ninja’ generator to macos-builds workflow (<a class="reference external" href="https://github.com/asap-projects/asap-common/commit/32bcb28b97d3c904a1dd2841aa28602293cbf718">32bcb28</a>)</p></li>
+<li><p>allow project options to be overriden from master projects or command line (<a class="reference external" href="https://github.com/asap-projects/asap-common/commit/2812446053301c9ebb6ff0ce5a37a74a95535d8d">2812446</a>)</p></li>
+<li><p>always add code coverage ‘all’ targets (<a class="reference external" href="https://github.com/asap-projects/asap-common/commit/d7309a0806e11a46c73b700f12bccb424c62839b">d7309a0</a>)</p></li>
+<li><p>always include CTest even when ASAP_BUILD_TESTS is OFF (<a class="reference external" href="https://github.com/asap-projects/asap-common/commit/4c5ef88ab79bd1ad50b68e1cc2a41fc16ce73613">4c5ef88</a>)</p></li>
+<li><p>api export generated header does not respect project layout (<a class="reference external" href="https://github.com/asap-projects/asap-common/commit/571ac3f7b24b1805ebad46c3ccf38b13aeee72ae">571ac3f</a>)</p></li>
+<li><p><strong>build:</strong> <a class="reference external" href="https://github.com/asap-projects/asap-common/issues/21">#21</a> target option <code class="docutils literal notranslate"><span class="pre">WARNING</span></code> not propagated properly (<a class="reference external" href="https://github.com/asap-projects/asap-common/commit/432cdaff1e5c8775d0d5c533dd0abe5eac229bd7">432cdaf</a>)</p></li>
+<li><p>contract mode definition should only be added when not testing asap_contract (<a class="reference external" href="https://github.com/asap-projects/asap-common/commit/c6d5e342e7a74236bb1b006be1e0d6bfe956a51a">c6d5e34</a>)</p></li>
+<li><p>contract mode definition should only be added when not testing asap_contract (<a class="reference external" href="https://github.com/asap-projects/asap-common/commit/cb7c9fbb3fc1043626e719747c1f46bcbc4ba121">cb7c9fb</a>)</p></li>
+<li><p>create .clangd only if it does not exists (<a class="reference external" href="https://github.com/asap-projects/asap-common/commit/8942178bb3e6049bcc5e75863982a03698e3fd2d">8942178</a>)</p></li>
+<li><p>enable docs build for pages (<a class="reference external" href="https://github.com/asap-projects/asap-common/commit/010fc52841c19585508f5337072bc323dfaea598">010fc52</a>)</p></li>
+<li><p>enable profiling for test coverage for MSVC (<a class="reference external" href="https://github.com/asap-projects/asap-common/commit/7348d0a36b05b2f2e9c517e5b981f2c218bd511e">7348d0a</a>), closes <a class="reference external" href="https://github.com/asap-projects/asap-common/issues/22">#22</a></p></li>
+<li><p>generate version numbers as numbers (<a class="reference external" href="https://github.com/asap-projects/asap-common/commit/b3491d149dd2272f6bc547d4970e3cc34128e5cf">b3491d1</a>)</p></li>
+<li><p>generated <code class="docutils literal notranslate"><span class="pre">version.h</span></code> should follow project naming (<a class="reference external" href="https://github.com/asap-projects/asap-common/commit/329bcdfc8cb9ba4782d0cbf4b3f21ad677307644">329bcdf</a>)</p></li>
+<li><p>honor the options to disable doc, docygen, sphinx (<a class="reference external" href="https://github.com/asap-projects/asap-common/commit/2d66564ba97a3fbcf0ea5b856dad801a8718796f">2d66564</a>)</p></li>
+<li><p>install master project generated header files (<a class="reference external" href="https://github.com/asap-projects/asap-common/commit/3c5c1628b3c920e52200f7e14ecde2346b78a6f4">3c5c162</a>)</p></li>
+<li><p>main.cpp generation fails when multiple build configs are running (<a class="reference external" href="https://github.com/asap-projects/asap-common/commit/e7eb31400ef177d7d161501bc209005721d354f2">e7eb314</a>)</p></li>
+<li><p>only add doxygen doc target if ASAP_BUILD_DOCS is ON (<a class="reference external" href="https://github.com/asap-projects/asap-common/commit/f05b118f2118f357616e89a79308d6f9d685598b">f05b118</a>)</p></li>
+<li><p>remove unnecessary esbonio settings (<a class="reference external" href="https://github.com/asap-projects/asap-common/commit/5f5ada26c0c1a1204aa056c90180e2e866b7db03">5f5ada2</a>)</p></li>
+<li><p>remove Xcode generator from macos-builds workflow (<a class="reference external" href="https://github.com/asap-projects/asap-common/commit/fde6a3b79554a218834aaf8b816b2c371c74beed">fde6a3b</a>)</p></li>
+<li><p>remove Xcode setup step from macos-builds workflow (<a class="reference external" href="https://github.com/asap-projects/asap-common/commit/a97b42ac48902e7f23d98e6d8fecc2a1eff91e9c">a97b42a</a>)</p></li>
+<li><p>restore test setup deleted by mistake (<a class="reference external" href="https://github.com/asap-projects/asap-common/commit/cec7b9d92481d1480c54610892cbfd954b9e0068">cec7b9d</a>)</p></li>
+<li><p>sphinx generation targets not properly setup (<a class="reference external" href="https://github.com/asap-projects/asap-common/commit/a06b9a177ca551849be712552424c578e1953f8d">a06b9a1</a>)</p></li>
+<li><p>sub-projects with tests fail due to coverage all target not being setup early enough (<a class="reference external" href="https://github.com/asap-projects/asap-common/commit/400b2ccc120bd4f2c4d70f48fd3f94ce7a3f6de0">400b2cc</a>)</p></li>
+<li><p>top level install not working properly (<a class="reference external" href="https://github.com/asap-projects/asap-common/commit/4ac4a31001a2ab73764e3d9fe3f279b1e7b25aee">4ac4a31</a>)</p></li>
+<li><p>update actions to latest versions in workflows (<a class="reference external" href="https://github.com/asap-projects/asap-common/commit/dac90de17a92b1be90b46090070d0c0a1ce912a4">dac90de</a>)</p></li>
+<li><p>update branch name from main to master in release workflow (<a class="reference external" href="https://github.com/asap-projects/asap-common/commit/802960e6e314b86b0437cd983daf09a6c314e4d2">802960e</a>)</p></li>
+<li><p>update GitHub Actions to use latest versions of actions and Python (<a class="reference external" href="https://github.com/asap-projects/asap-common/commit/52c983dbae057a217e2e45bc00aa73d31b8cf31b">52c983d</a>)</p></li>
+<li><p>update GitHub Actions to use latest versions of actions and Python (<a class="reference external" href="https://github.com/asap-projects/asap-common/commit/40cc90402c07c4cefbcad5077a0c967c4b280ca7">40cc904</a>)</p></li>
+<li><p>update macos workflow and fix issues (<a class="reference external" href="https://github.com/asap-projects/asap-common/commit/7575f8109d44a6113b96bdee0c342ec67d0814e9">7575f81</a>)</p></li>
+<li><p>update Xcode versions in macos-builds workflow (<a class="reference external" href="https://github.com/asap-projects/asap-common/commit/f93fc1f8dceb067ad82de623a3cf3b3775afc7b5">f93fc1f</a>)</p></li>
+<li><p>upgrade doxygen config file to avoid unnecessary warnings (<a class="reference external" href="https://github.com/asap-projects/asap-common/commit/864fd656c56957b1bcfeef8f5de0cdb8f9f0df3a">864fd65</a>)</p></li>
+<li><p>use cmake-format extension default behavior (<a class="reference external" href="https://github.com/asap-projects/asap-common/commit/a5d5c5eae39e4d3d0094c00848cfe777d331a219">a5d5c5e</a>)</p></li>
+<li><p>use correct path for the version include file (<a class="reference external" href="https://github.com/asap-projects/asap-common/commit/7997b68eeef236e6940b0ba168c79dbdd21b34ad">7997b68</a>)</p></li>
+<li><p>use swift common for clang format/tidy and gersemi for cmake format (<a class="reference external" href="https://github.com/asap-projects/asap-common/commit/dc22af91ba2fdcf8eb60542644949d6ede44a388">dc22af9</a>)</p></li>
+<li><p>version info tool using wrong template (<a class="reference external" href="https://github.com/asap-projects/asap-common/commit/944774796d23bea0f6008945e2b037d3b147dd43">9447747</a>)</p></li>
+<li><p>version-info test was added even when ASAP_BUILD_TESTS is OFF (<a class="reference external" href="https://github.com/asap-projects/asap-common/commit/b566e7b555ffb40f8ab1eea43d9a965c5724ccf1">b566e7b</a>)</p></li>
+<li><p>wrong variable used for target name (<a class="reference external" href="https://github.com/asap-projects/asap-common/commit/4ecd2bbfa896547e77cdbf7ba1c535f80125eef4">4ecd2bb</a>)</p></li>
+<li><p>wrong variable used of target name (<a class="reference external" href="https://github.com/asap-projects/asap-common/commit/04b5343ae541bd6d4f5ae1c1fa2eb85b93e0b5a3">04b5343</a>)</p></li>
+</ul>
+</section>
+</section>
+<section id="id2">
+<h2><a class="reference external" href="http://github.com/abdes/asap/compare/v2.0.5...v2.0.6">2.0.6</a> (2022-08-20)<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>code cleanup to eliminate compiler/linter warnings and improve code quality.</p></li>
 </ul>
 </section>
-<section id="id2">
-<h2><a class="reference external" href="http://github.com/abdes/asap/compare/v2.0.4...v2.0.5">2.0.5</a> (2022-08-20)<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
-<section id="features">
-<h3>Features<a class="headerlink" href="#features" title="Link to this heading">#</a></h3>
+<section id="id3">
+<h2><a class="reference external" href="http://github.com/abdes/asap/compare/v2.0.4...v2.0.5">2.0.5</a> (2022-08-20)<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
+<section id="id4">
+<h3>Features<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>add ccache support to dev container
 (<a class="reference external" href="http://github.com/abdes/asap/commit/202c27a628f7f35ae17f2df91c1d95f67360abea">202c27a</a>)</p></li>
@@ -426,8 +510,8 @@ document.write(`
 (<a class="reference external" href="http://github.com/abdes/asap/commit/412730f86679d7ccd350cadf5649b7a489376cae">412730f</a>)</p></li>
 </ul>
 </section>
-<section id="bug-fixes">
-<h3>Bug Fixes<a class="headerlink" href="#bug-fixes" title="Link to this heading">#</a></h3>
+<section id="id5">
+<h3>Bug Fixes<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p><a class="reference external" href="http://github.com/abdes/asap/issues/10">#10</a> no more template export header
 (<a class="reference external" href="http://github.com/abdes/asap/commit/dd8ffd5a8f36340963349c7ebcb7c1713c2f880a">dd8ffd5</a>)</p></li>
@@ -498,14 +582,14 @@ closes <a class="reference external" href="http://github.com/abdes/asap/issues/4
 </ul>
 </section>
 </section>
-<section id="id3">
-<h2><a class="reference external" href="http://github.com/abdes/asap/compare/v2.0.3...v2.0.4">2.0.4</a> (2022-03-15)<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
+<section id="id6">
+<h2><a class="reference external" href="http://github.com/abdes/asap/compare/v2.0.3...v2.0.4">2.0.4</a> (2022-03-15)<a class="headerlink" href="#id6" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>speedup build and CI actions by removing unnecessary dependency on Google Test
 and the apt-get update step.</p></li>
 </ul>
-<section id="id4">
-<h3>Bug Fixes<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
+<section id="id7">
+<h3>Bug Fixes<a class="headerlink" href="#id7" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>only add sanitizers if building tests
 (<a class="reference external" href="http://github.com/abdes/asap/commit/182d0399ee47989d356a3cc3a6a07d1b487b5e86">182d039</a>)</p></li>
@@ -514,24 +598,24 @@ and the apt-get update step.</p></li>
 </ul>
 </section>
 </section>
-<section id="id5">
-<h2><a class="reference external" href="http://github.com/abdes/asap/compare/v2.0.2...v2.0.3">2.0.3</a> (2022-03-07)<a class="headerlink" href="#id5" title="Link to this heading">#</a></h2>
-<section id="id6">
-<h3>Bug Fixes<a class="headerlink" href="#id6" title="Link to this heading">#</a></h3>
+<section id="id8">
+<h2><a class="reference external" href="http://github.com/abdes/asap/compare/v2.0.2...v2.0.3">2.0.3</a> (2022-03-07)<a class="headerlink" href="#id8" title="Link to this heading">#</a></h2>
+<section id="id9">
+<h3>Bug Fixes<a class="headerlink" href="#id9" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>enable code coverage all targets
 (<a class="reference external" href="http://github.com/abdes/asap/commit/2399bc30297609ad90746e7926063faa91722a6a">2399bc3</a>)</p></li>
 </ul>
 </section>
 </section>
-<section id="id7">
-<h2><a class="reference external" href="http://github.com/abdes/asap/compare/v2.0.1...v2.0.2">2.0.2</a> (2022-03-06)<a class="headerlink" href="#id7" title="Link to this heading">#</a></h2>
+<section id="id10">
+<h2><a class="reference external" href="http://github.com/abdes/asap/compare/v2.0.1...v2.0.2">2.0.2</a> (2022-03-06)<a class="headerlink" href="#id10" title="Link to this heading">#</a></h2>
 <p>docs: add last-updated-on timestamp</p>
 </section>
-<section id="id8">
-<h2><a class="reference external" href="http://github.com/abdes/asap/compare/v2.0.0...v2.0.1">2.0.1</a> (2022-03-06)<a class="headerlink" href="#id8" title="Link to this heading">#</a></h2>
-<section id="id9">
-<h3>Bug Fixes<a class="headerlink" href="#id9" title="Link to this heading">#</a></h3>
+<section id="id11">
+<h2><a class="reference external" href="http://github.com/abdes/asap/compare/v2.0.0...v2.0.1">2.0.1</a> (2022-03-06)<a class="headerlink" href="#id11" title="Link to this heading">#</a></h2>
+<section id="id12">
+<h3>Bug Fixes<a class="headerlink" href="#id12" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>define asap_top_level_install as empty when project install should be skipped
 (<a class="reference external" href="http://github.com/abdes/asap/commit/593da1e93209a9fba5b5d4fbe730ba50068b02c4">593da1e</a>)</p></li>
@@ -544,8 +628,8 @@ and the apt-get update step.</p></li>
 </ul>
 </section>
 </section>
-<section id="id10">
-<h2>2.0.0 (2022-03-06)<a class="headerlink" href="#id10" title="Link to this heading">#</a></h2>
+<section id="id13">
+<h2>2.0.0 (2022-03-06)<a class="headerlink" href="#id13" title="Link to this heading">#</a></h2>
 <p>This is a major refactoring of the <code class="docutils literal notranslate"><span class="pre">asap</span></code> family of projects and as such
 introduces several breaking changes. The following detailed change log is not
 entirely relevant as many of the modules have been extracted in the final stage
@@ -607,8 +691,8 @@ pulling extra 3rd party dependencies such as spdlog, fmt etc… For this reason,
 the logging functionality is taken out of the common submodule and moved to
 logging submodule.</p>
 </section>
-<section id="id11">
-<h3>Features<a class="headerlink" href="#id11" title="Link to this heading">#</a></h3>
+<section id="id14">
+<h3>Features<a class="headerlink" href="#id14" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>add gsl library
 (<a class="reference external" href="http://github.com/abdes/asap/commit/9b982f17aeb9362619cf871ed9bbedb65344ab43">9b982f1</a>)</p></li>
@@ -639,8 +723,8 @@ define
 (<a class="reference external" href="http://github.com/abdes/asap/commit/8cece41e3c63c9ccae9888cb694cb821f43dfdca">8cece41</a>)</p></li>
 </ul>
 </section>
-<section id="id12">
-<h3>Bug Fixes<a class="headerlink" href="#id12" title="Link to this heading">#</a></h3>
+<section id="id15">
+<h3>Bug Fixes<a class="headerlink" href="#id15" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>“-Wreserved-identifier” only if not APPLE
 (<a class="reference external" href="http://github.com/abdes/asap/commit/05fac12d37978c6651c299e6ad1cc64dfed88fa0">05fac12</a>)</p></li>
@@ -803,30 +887,35 @@ restrictions
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">2.0.6 (2022-08-20)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">2.0.5 (2022-08-20)</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">2.1.0 (2025-07-09)</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#features">Features</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bug-fixes">Bug Fixes</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">2.0.6 (2022-08-20)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">2.0.5 (2022-08-20)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Features</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Bug Fixes</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#documentation">Documentation</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">2.0.4 (2022-03-15)</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Bug Fixes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">2.0.4 (2022-03-15)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">Bug Fixes</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">2.0.3 (2022-03-07)</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Bug Fixes</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">2.0.2 (2022-03-06)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">2.0.1 (2022-03-06)</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">2.0.3 (2022-03-07)</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">Bug Fixes</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">2.0.0 (2022-03-06)</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#breaking-changes">⚠ BREAKING CHANGES</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">Features</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">2.0.2 (2022-03-06)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">2.0.1 (2022-03-06)</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">Bug Fixes</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">2.0.0 (2022-03-06)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#breaking-changes">⚠ BREAKING CHANGES</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">Features</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">Bug Fixes</a></li>
 </ul>
 </li>
 </ul>
